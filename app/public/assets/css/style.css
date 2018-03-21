@@ -1,42 +1,36 @@
 /*==============================================
-  Project:   Hornbill - App Landing Page
-  Build:     Bootstrap 4.0.0
-  Author:    ThemeShef
-  Version:   1.0
- ===============================================*/
-/*==============================================
   Table of Contents
   01. BASE CSS
       a. PRELOADER CSS
       b. UTILITY CSS
-      
-  02. HEADER CSS   
-  03. BANNER CSS   
-  04. SERVICES CSS   
-  05. FEATURES CSS   
-  06. GALLERY CSS   
-  07. ABOUT CSS   
-  08. PROMOTIONS CSS   
-  09. PRICING CSS   
-  10. VIDEO CSS   
-  11. TEAM MEMBERS CSS   
-  12. REVIEWS CSS   
-  13. BLOG CSS   
-  14. CONTACT CSS   
-  15. FOOTER CSS   
-  16. SIDEBAR CSS   
-  17. BUTTONS CSS   
-  18. GRADIENTS & COLORS CSS   
-  19. BACKGROUNDS CSS   
-  20. ANIMATIONS CSS   
-  21. MODAL POPUP CSS   
-  22. RESPONSIVE CSS   
+
+  02. HEADER CSS
+  03. BANNER CSS
+  04. SERVICES CSS
+  05. FEATURES CSS
+  06. GALLERY CSS
+  07. ABOUT CSS
+  08. PROMOTIONS CSS
+  09. PRICING CSS
+  10. VIDEO CSS
+  11. TEAM MEMBERS CSS
+  12. REVIEWS CSS
+  13. BLOG CSS
+  14. CONTACT CSS
+  15. FOOTER CSS
+  16. SIDEBAR CSS
+  17. BUTTONS CSS
+  18. GRADIENTS & COLORS CSS
+  19. BACKGROUNDS CSS
+  20. ANIMATIONS CSS
+  21. MODAL POPUP CSS
+  22. RESPONSIVE CSS
  ===============================================*/
 /* ==============================================
  * BASE CSS
  * ===============================================*/
-/* ======================== 
- * PRELOADER CSS 
+/* ========================
+ * PRELOADER CSS
  * ====================== */
 #loader-wrapper {
   position: fixed;
@@ -55,7 +49,7 @@
     margin: -75px 0 0 -75px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #3498db;
+    border-top-color: #6bb94d;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
     z-index: 1034; }
@@ -68,7 +62,7 @@
       bottom: 5px;
       border-radius: 50%;
       border: 3px solid transparent;
-      border-top-color: #e74c3c;
+      border-top-color: #345ead;
       -webkit-animation: spin 3s linear infinite;
       animation: spin 3s linear infinite; }
     #loader-wrapper #loader:after {
@@ -80,7 +74,7 @@
       bottom: 15px;
       border-radius: 50%;
       border: 3px solid transparent;
-      border-top-color: #f9c922;
+      border-top-color: #fed24c;
       -webkit-animation: spin 1.5s linear infinite;
       animation: spin 1.5s linear infinite; }
   #loader-wrapper .preloader-logo {
@@ -173,8 +167,8 @@
 .no-js #loader-wrapper {
   display: none; }
 
-/* ================================ 
- * UTILITY CSS 
+/* ================================
+ * UTILITY CSS
  * ============================= */
 html, body {
   height: 100%; }
@@ -343,9 +337,9 @@ ul, ol {
   .faq-phones .phone-center {
     position: absolute;
     top: -28px;
-    left: 23%;
+    left: 8%;
     z-index: 3;
-    width: 54%; }
+    width: 100%; }
   .faq-phones .phone-right {
     float: right;
     width: 50%; }
@@ -764,23 +758,20 @@ ul, ol {
  * HEADER CSS
  =================================== */
 .hornbill-navbar {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  padding: 0; }
-  .hornbill-navbar .background {
+  padding: 10px;
+  transition: all 0.3s ease;}
+  .hornbill-navbar.background {
     padding: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35); }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease; }
   .hornbill-navbar .navbar-brand {
-    width: 150px;
-    background: url(../img/logo-white.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    font-size: 0; }
+    width: 45%;
+   }
   .hornbill-navbar .hornbill-nav li a {
     font-size: 17px;
     color: #f6f6f6;
     padding: 20px 30px;
-    font-weight: 300;
-    text-transform: capitalize; }
+    font-weight: 300; }
     .hornbill-navbar .hornbill-nav li a.active, .hornbill-navbar .hornbill-nav li a:hover {
       color: #fff; }
   .hornbill-navbar.navbar-expand-lg .hornbill-nav li a {
@@ -791,9 +782,9 @@ ul, ol {
     .hornbill-navbar.fixed-top:hover, .hornbill-navbar.fixed-top:focus {
       background: transparent; }
   .hornbill-navbar.background .navbar-brand {
-    width: 120px;
-    margin-top: 5px;
-    transition: all 0.2s ease-in-out; }
+    width: 45%;
+    padding: 10px;
+    transition: all 0.3s ease; }
   .hornbill-navbar.bg-damn .hornbill-nav li a.active, .hornbill-navbar.bg-damn .hornbill-nav li a:hover, .hornbill-navbar.bg-damn.background .hornbill-nav li a.active, .hornbill-navbar.bg-damn.background .hornbill-nav li a:hover {
     background: #5d4eb7; }
   .hornbill-navbar.bg-victoria .hornbill-nav li a.active, .hornbill-navbar.bg-victoria .hornbill-nav li a:hover, .hornbill-navbar.bg-victoria.background .hornbill-nav li a.active, .hornbill-navbar.bg-victoria.background .hornbill-nav li a:hover {
@@ -819,7 +810,7 @@ ul, ol {
   .hornbill-navbar.bg-splash .hornbill-nav li a.active, .hornbill-navbar.bg-splash .hornbill-nav li a:hover, .hornbill-navbar.bg-splash.background .hornbill-nav li a.active, .hornbill-navbar.bg-splash.background .hornbill-nav li a:hover {
     background: #357a92; }
   .hornbill-navbar.bg-wine .hornbill-nav li a.active, .hornbill-navbar.bg-wine .hornbill-nav li a:hover, .hornbill-navbar.bg-wine.background .hornbill-nav li a.active, .hornbill-navbar.bg-wine.background .hornbill-nav li a:hover {
-    background: #E91E63; }
+    background: #4CAF50; }
   .hornbill-navbar.bg-sharp .hornbill-nav li a.active, .hornbill-navbar.bg-sharp .hornbill-nav li a:hover, .hornbill-navbar.bg-sharp.background .hornbill-nav li a.active, .hornbill-navbar.bg-sharp.background .hornbill-nav li a:hover {
     background: #276ca4; }
   .hornbill-navbar.bg-lighter.background .hornbill-nav li a {
@@ -3268,8 +3259,9 @@ ul, ol {
     color: #fff; }
   .hornbill-big-btn .fa {
     float: left;
-    font-size: 43px;
-    margin-right: 10px;
+    font-size: 33px;
+    margin-top: 4px;
+    margin-right: 15px;
     padding: 0; }
   .hornbill-big-btn .normal-txt {
     display: block;
@@ -3410,9 +3402,9 @@ ul, ol {
 .bg-wine:focus,
 .overlay-wine:before,
 .hornbill-navbar.background.bg-wine {
-  background-image: -webkit-linear-gradient(bottom left, #fb4c7f 0%, #573d7d 100%);
-  background-image: -o-linear-gradient(bottom left, #fb4c7f 0%, #573d7d 100%);
-  background-image: linear-gradient(to top right, #fb4c7f 0%, #573d7d 100%); }
+  background-image: -webkit-linear-gradient(bottom left, #8BC34A 0%, #4CAF50 100%);
+  background-image: -o-linear-gradient(bottom left, #8BC34A 0%, #4CAF50 100%);
+  background-image: linear-gradient(to top right, #8BC34A 0%, #4CAF50 100%); }
 
 .bg-beach,
 .bg-beach:hover,
@@ -4659,3 +4651,26 @@ body.body-wine .features-list.hover-none .single-feature:hover {
 /* End media (767px) */
 
 /*# sourceMappingURL=style.css.map */
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Fundo da barra de rolagem */
+::-webkit-scrollbar-track-piece {
+    background-color: #EEE;
+    border-left: 1px solid #CCC
+}
+
+/* Cor do indicador de rolagem */
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: #BAC0C4
+}
+
+/* Cor do indicador de rolagem - ao passar o mouse */
+::-webkit-scrollbar-thumb:vertical:hover,
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background-color: #717171
+}
