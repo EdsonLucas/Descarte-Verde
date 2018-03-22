@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//seja solidário, seja cidadão
 
 class App extends Component {
   render() {
@@ -50,7 +51,7 @@ class App extends Component {
               <div className="row ">
                 <div className="col-lg-6 banner-left text-white ml-lg-auto p-top-100 fadeInRight">
                   <img src="assets/img/logo-white.png" style={{width: "70%"}} alt="Brand" className="img-fluid mt-lg-5" />
-                  <p className="ml-lg-3 mr-lg-3 m-top-40 m-bot-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                  <p className="ml-lg-3 mr-lg-3 m-top-40 m-bot-30">Encontre com facilidade os pontos de reciclagem mais próximo a você! O Descarte Verde é uma forma inteligente de lidar com o descarte de resíduos, auxiliando você a encontrar os pontos de coleta para reciclagem ou destinação final ambientalmente correta.</p>
                   <div className="buttons m-top-40">
                     <a href="#" className="btn btn-circle hornbill-big-btn bg-sunshine hover-glass">
                       <i className="fa fa-apple" />
@@ -603,7 +604,7 @@ class App extends Component {
                 <div className="col-md-4 footer-widget fadeIn text-lg-left">
                   <div className="footer-logo">
                     <a href="index.html">
-                      <img src="assets/img/footer-logo.png" alt="img" className="img-fluid" />
+                      <img src="assets/img/logo-black.png" alt="img" className="img-fluid" />
                     </a>
                   </div>
                   <p>A technology startup based somewhere in the world. making the finest landing page ever made for you. Contact us for support if you really love us. We always love to hear you. If you have any idea to share with us, please fel free to share it.</p>
