@@ -351,6 +351,9 @@ ul, ol {
 .m-top-10 {
   margin-top: 10px; }
 
+.m-top-9 {
+  margin-top: 9px; }
+
 .m-top-15 {
   margin-top: 15px; }
 
@@ -1599,7 +1602,7 @@ ul, ol {
   .video .play-video-icon {
     margin: 0 auto;
     display: block;
-    color: #7f67f3;
+    color: #70ba34;
     background-color: #ffffff;
     border-radius: 50px;
     width: 60px;

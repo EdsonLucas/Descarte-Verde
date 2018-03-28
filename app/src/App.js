@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//seja solidário, seja cidadão
 
 class App extends Component {
   render() {
@@ -80,27 +79,6 @@ class App extends Component {
               <div className="row">
                 <div className="col-lg-4 col-md-6 single-service fadeInUp">
                   <div className="icon">
-                    <img src="assets/img/icons/service-icon-1.png" alt="img" className="img-fluid" />
-                  </div>
-                  <h3>Made With Love</h3>
-                  <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
-                </div>
-                <div className="col-lg-4 col-md-6 single-service fadeInUp">
-                  <div className="icon">
-                    <img src="assets/img/icons/service-icon-2.png" alt="img" className="img-fluid" />
-                  </div>
-                  <h3>Great Interface</h3>
-                  <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
-                </div>
-                <div className="col-lg-4 col-md-6 single-service fadeInUp">
-                  <div className="icon">
-                    <img src="assets/img/icons/service-icon-3.png" alt="img" className="img-fluid" />
-                  </div>
-                  <h3>Pure &amp;Simple</h3>
-                  <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
-                </div>
-                <div className="col-lg-4 col-md-6 single-service fadeInUp">
-                  <div className="icon">
                     <img src="assets/img/icons/service-icon-4.png" alt="img" className="img-fluid" />
                   </div>
                   <h3>Retina Ready</h3>
@@ -140,7 +118,7 @@ class App extends Component {
                   <img src="assets/img/logo.png" alt="img" className="img-fluid" />
                 </div> */}
                 <div className="promo-heading text-white fadeInRight">
-                  <h2>Find out what reasons behind our quick popularity.</h2>
+                  <h2>Seja Solidário, Seja Cidadão</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis rhoncus ante, eget molestie dolor. Duis tellus magna, malesuada vitae velit in, ultrices fringilla metus. Nulla facilisi.</p>
                 </div>
                 <ul className="features-list fadeInRight">
@@ -172,7 +150,6 @@ class App extends Component {
                   <div class="big-brand-logo">
                     <img src="assets/img/logo-black.png" width="480px" class="img-fluid" />
                   </div>
-                  <h4>Elegant App For Passionate People!</h4>
                 </div>
               </div>
               {/* More Features Start */}
@@ -244,8 +221,8 @@ class App extends Component {
                 </div>
                 <div className="col-md-8">
                   <div className="promo-download-texts text-white">
-                    <h2 className="fadeInUp">What are you waiting for?</h2>
-                    <h5 className="fadeInUp">Click download button &amp;enjoy best app in the planet.</h5>
+                    <h2 className="fadeInUp">O que você está esperando?</h2>
+                    <h5 className="fadeInUp">Clique no botão de download &amp;enjoy best app in the planet.</h5>
                     <div className="buttons fadeIn m-top-30">
                       <a href="#" className="btn btn-circle hornbill-big-btn bg-sunshine hover-glass">
                         <i className="fa fa-apple" />
@@ -268,52 +245,16 @@ class App extends Component {
         </main>
         {/* END MAIN SECTION */}
         {/* FOOTER START */}
-        <footer className="footer-section bg-lighter m-top-100 m-sm-top-60">
-          <div className="footer-top m-bot-80 m-sm-bot-30">
+        <footer className="footer-section bg-lighter m-top-60 m-sm-top-60">
+          <div className="footer-top m-bot-30 m-sm-bot-30">
             <div className="container">
               <div className="row">
-                <div className="col-md-4 footer-widget fadeIn text-lg-left">
+                <div className="col-md-12 footer-widget fadeIn text-lg-left">
                   <div className="footer-logo">
                     <a href="index.html">
-                      <img src="assets/img/logo.png" alt="img" className="img-fluid" />
+                      <img src="assets/img/logo.png" alt="img" className="img-fluid" width="30%" style={{display: 'block', margin: 'auto'}} />
                     </a>
                   </div>
-                  <p>A technology startup based somewhere in the world. making the finest landing page ever made for you. Contact us for support if you really love us. We always love to hear you. If you have any idea to share with us, please fel free to share it.</p>
-                </div>
-                <div className="col-md-4 footer-widget fadeIn">
-                  <h3>SUBSCRIBE</h3>
-                  <div className="discount">
-                    and get <span className="damn">35% discount!</span>
-                  </div>
-                  <form method="post" className="widget-subscribe-form">
-                    <div className="form-group">
-                      <input type="email" className="form-control input-circle" placeholder="Enter your email" required="required" />
-                    </div>
-                    <div className="form-group">
-                      <button type="submit" className="btn btn-block btn-circle bg-wine text-white hover-glass">subscribe</button>
-                    </div>
-                  </form>
-                </div>
-                <div className="col-md-4 footer-widget fadeIn">
-                  <h3>We Love Sharing</h3>
-                  <p>Share our hornbill if you really love this product. If your have any idea for hornbill please share with us. We respect your feelings.</p>
-                  <ul className="widget-social m-top-30">
-                    <li>
-                      <a href="#" className="twitter">
-                        <i className="fa fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="facebook">
-                        <i className="fa fa-facebook" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="google-plus">
-                        <i className="fa fa-google-plus" />
-                      </a>
-                    </li>
-                  </ul>
                 </div>
               </div>
               {/* end row */}
@@ -328,14 +269,24 @@ class App extends Component {
                     ©2018 ~ Descarte Verde. Todos os direitos reservados.
                   </h6>
                 </div>
-                <div className="col-md-6 m-top-15 text-lg-right">
-                  <h6>
-                    Made With
-                    <span className="heart damn">
-                      <i className="fa fa-heart animate-pulse" />
-                    </span>
-                    By <a href="http://themeforest.net/user/themeshef/portfolio">ThemeShef</a>
-                  </h6>
+                <div className="col-md-6 m-top-9 text-lg-right">
+                  <ul className="widget-social">
+                    <li>
+                      <h6>
+                        TERMOS & CONDIÇÕES&nbsp;&nbsp;&nbsp;
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        POLÍTICA DE PRIVACIDADE&nbsp;&nbsp;&nbsp;
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        ENTRE EM CONTATO
+                      </h6>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
