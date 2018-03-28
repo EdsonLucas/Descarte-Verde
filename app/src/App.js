@@ -154,7 +154,7 @@ class App extends Component {
               </div>
               {/* More Features Start */}
               <section className="more-feature-section row p-top-100 p-bot-100 p-sm-bot-60">
-                <div className="col-md-6">
+                <div className="col-md-5">
                   <div className="more-features-phones m-sm-bot-45">
                     <div className="phone-slide ">
                       <div className="swiper-container phone-slide-gallery">
@@ -164,11 +164,10 @@ class App extends Component {
                         </div>
                       </div>
                     </div>
-                    <img src="assets/img/more-features-phone-2.png" alt="img" className="img-fluid more-features-phone-two fadeInLeft" />
                   </div>
                 </div>
                 {/* End of col left */}
-                <div className="col-md-6">
+                <div className="col-md-7">
                   <div className="promo-heading m-bot-35 fadeIn">
                     <h2>Amazing Features.</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis rhoncus ante, eget molestie dolor. Duis tellus magna, malesuada vitae velit in, ultrices fringilla metus. Nulla facilisi.</p>
