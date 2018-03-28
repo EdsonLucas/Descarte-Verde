@@ -81,14 +81,14 @@ class App extends Component {
                   <div className="icon">
                     <img src="assets/img/icons/service-icon-4.png" alt="img" className="img-fluid" />
                   </div>
-                  <h3>Retina Ready</h3>
+                  <h3>Facilitar o Descarte</h3>
                   <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
                 </div>
                 <div className="col-lg-4 col-md-6 single-service fadeInUp">
                   <div className="icon">
                     <img src="assets/img/icons/service-icon-5.png" alt="img" className="img-fluid" />
                   </div>
-                  <h3>Free Updates</h3>
+                  <h3>Promover Sustentabilidade</h3>
                   <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
                 </div>
                 <div className="col-lg-4 col-md-6 single-service fadeInUp">
@@ -118,8 +118,8 @@ class App extends Component {
                   <img src="assets/img/logo.png" alt="img" className="img-fluid" />
                 </div> */}
                 <div className="promo-heading text-white fadeInRight">
-                  <h2>Seja Solidário, Seja Cidadão</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis rhoncus ante, eget molestie dolor. Duis tellus magna, malesuada vitae velit in, ultrices fringilla metus. Nulla facilisi.</p>
+                  <h2>Seja Consciente, Seja Cidadão</h2>
+                  <p>Cada vez mais, os centros urbanos, com grande crescimento populacional, têm encontrado dificuldades em conseguir locais para instalarem depósitos de lixo. Portanto, a reciclagem apresenta-se como uma solução viável economicamente, além de ser ambientalmente correta e o Descarte Verde quer facilitar ainda mais essa solução.</p>
                 </div>
                 <ul className="features-list fadeInRight">
                   <li className="single-feature text-white">
@@ -159,8 +159,8 @@ class App extends Component {
                     <div className="phone-slide ">
                       <div className="swiper-container phone-slide-gallery">
                         <div className="swiper-wrapper">
-                          <div className="swiper-slide"><img src="assets/img/gallery/screen-3.jpg" alt="Image" className="img-fluid" /></div>
-                          <div className="swiper-slide"><img src="assets/img/gallery/screen-2.jpg" alt="Image" className="img-fluid" /></div>
+                          <div className="swiper-slide"><img src="assets/img/gallery/screen-1.png" alt="Image" className="img-fluid" /></div>
+                          <div className="swiper-slide"><img src="assets/img/gallery/screen-2.png" alt="Image" className="img-fluid" /></div>
                         </div>
                       </div>
                     </div>
