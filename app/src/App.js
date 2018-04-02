@@ -9,7 +9,7 @@ class App extends Component {
           <div id="loader" />
           <div className="loader-section section-left" />
           <div className="loader-section section-right" />
-          <img src="assets/img/logo-white.png" alt="images" className="preloader-logo" />
+          <img src="assets/img/logo-white.png" alt="Descarte Verde" className="preloader-logo" />
         </div>
         {/* preloader end */}
         {/* HEADER START */}
@@ -17,7 +17,7 @@ class App extends Component {
           {/* Start Navigation */}
           <nav id="mainNav" className="navbar navbar-expand-lg fixed-top hornbill-navbar bg-wine">
             <div className="container">
-              <a className="js-scroll-trigger" href="#page_top">
+              <a className="js-scroll-trigger" href="index.html">
                 <img src="assets/img/logo-white.png" className="navbar-brand" />
               </a>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,8 +49,8 @@ class App extends Component {
             <div className="container relative z-3">
               <div className="row ">
                 <div className="col-lg-6 banner-left text-white ml-lg-auto p-top-100 fadeInRight">
-                  <img src="assets/img/logo-white.png" style={{width: "70%"}} alt="Brand" className="img-fluid mt-lg-5" />
-                  <p className="ml-lg-3 mr-lg-3 m-top-40 m-bot-30">Encontre com facilidade os pontos de reciclagem mais próximo a você! O Descarte Verde é uma forma inteligente de lidar com o descarte de resíduos, auxiliando você a encontrar os pontos de coleta para reciclagem ou destinação final ambientalmente correta.</p>
+                  <img src="assets/img/logo-white.png" alt="Descarte Verde" className="main-logo img-fluid mt-lg-5" />
+                  <p className="ml-lg-3 mr-lg-3 m-top-40 m-bot-30">Encontre com facilidade os pontos de reciclagem mais próximos a você! O Descarte Verde é uma forma inteligente de lidar com o descarte de resíduos, auxiliando você a encontrar os pontos de coleta para reciclagem ou destinação final ambientalmente correta.</p>
                   <div className="buttons m-top-40">
                     <a href="#" className="btn btn-circle hornbill-big-btn bg-sunshine hover-glass">
                       <i className="fa fa-apple" />
@@ -77,26 +77,19 @@ class App extends Component {
           <section id="services" className="service-section p-top-80">
             <div className="container">
               <div className="row">
-                <div className="col-lg-4 col-md-6 single-service fadeInUp">
+                <div className="col-md-6 single-service fadeInUp">
                   <div className="icon">
                     <img src="assets/img/icons/service-icon-4.png" alt="img" className="img-fluid" />
                   </div>
                   <h3>Facilitar o Descarte</h3>
-                  <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
+                  <p class="tjustify">Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
                 </div>
-                <div className="col-lg-4 col-md-6 single-service fadeInUp">
+                <div className="col-md-6 single-service fadeInUp">
                   <div className="icon">
                     <img src="assets/img/icons/service-icon-5.png" alt="img" className="img-fluid" />
                   </div>
                   <h3>Promover Sustentabilidade</h3>
-                  <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
-                </div>
-                <div className="col-lg-4 col-md-6 single-service fadeInUp">
-                  <div className="icon">
-                    <img src="assets/img/icons/service-icon-6.png" alt="img" className="img-fluid" />
-                  </div>
-                  <h3>24/7 Support</h3>
-                  <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
+                  <p class="tjustify">Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
                 </div>
               </div>
               {/* end of row */}
@@ -104,7 +97,7 @@ class App extends Component {
           </section>
           {/* END of Service Section */}
           {/* Video Section Start */}
-          <section className="video-section">
+          <section className="video-section" id="features">
             <div className="card-group">
               <div className="card bg-phone-at-hands">
                 <div className="video">
@@ -114,9 +107,6 @@ class App extends Component {
                 </div>
               </div>
               <div className="card bg-dark about-video text-white p-top-125 p-bot-100 p-sm-top-80 p-sm-bot-50">
-                {/* <div className="big-brand-logo">
-                  <img src="assets/img/logo.png" alt="img" className="img-fluid" />
-                </div> */}
                 <div className="promo-heading text-white fadeInRight">
                   <h2>Seja Consciente, Seja Cidadão</h2>
                   <p>Cada vez mais, os centros urbanos, com grande crescimento populacional, têm encontrado dificuldades em conseguir locais para instalarem depósitos de lixo. Portanto, a reciclagem apresenta-se como uma solução viável economicamente, além de ser ambientalmente correta e o Descarte Verde quer facilitar ainda mais essa solução.</p>
@@ -126,15 +116,15 @@ class App extends Component {
                     <div className="feature-icon">
                       <span className="bi bi-badge1 text-white" />
                     </div>
-                    <h4>Elegant style</h4>
-                    <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna. Praesent tempus sed quam.</p>
+                    <h4>Ajude o meio ambiente a prosperar</h4>
+                    <p>As cidades onde o Descarte Verde está presente contam com mais oportunidades para as pessoas ganharem dinheiro, menos motoristas embriagados e mais opções de transporte para qualquer lugar, em qualquer horário.</p>
                   </li>
                   <li className="single-feature  text-white">
                     <div className="feature-icon">
                       <span className="bi bi-support text-white" />
                     </div>
-                    <h4>premium supports</h4>
-                    <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna. Praesent tempus sed quam.</p>
+                    <h4>Tecnologia que auxilia a sustentabilidade</h4>
+                    <p>A Uber utiliza a tecnologia para auxiliar na segurança dos usuários e motoristas parceiros antes, durante e depois de cada viagem.</p>
                   </li>
                 </ul>
               </div>
@@ -148,13 +138,13 @@ class App extends Component {
               <div class="col-sm-12">
                 <div class="faq-heading m-bot-100 m-sm-bot-40">
                   <div class="big-brand-logo">
-                    <img src="assets/img/logo-black.png" width="480px" class="img-fluid" />
+                    <img src="assets/img/logo-black.png" class="img-fluid" />
                   </div>
                 </div>
               </div>
               {/* More Features Start */}
               <section className="more-feature-section row p-top-100 p-bot-100 p-sm-bot-60">
-                <div className="col-md-5">
+                <div className="col-md-5 p-sm-bot-30">
                   <div className="more-features-phones m-sm-bot-45">
                     <div className="phone-slide ">
                       <div className="swiper-container phone-slide-gallery">
@@ -177,14 +167,14 @@ class App extends Component {
                       <div className="icon">
                         <span className="bi bi-alien" />
                       </div>
-                      <h4>Hundreds of Icons</h4>
+                      <h4>Produtos Descartáveis</h4>
                       <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna. Praesent tempus sed quam vel ornare magna.</p>
                     </li>
                     <li className="more-single-feature fadeIn">
                       <div className="icon">
                         <span className="bi bi-badge2" />
                       </div>
-                      <h4>Creative design</h4>
+                      <h4>Pontos de Entrega</h4>
                       <p>Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna. Praesent tempus sed quam vel ornare magna.</p>
                     </li>
                     <li className="more-single-feature fadeIn">
@@ -221,7 +211,7 @@ class App extends Component {
                 <div className="col-md-8">
                   <div className="promo-download-texts text-white">
                     <h2 className="fadeInUp">O que você está esperando?</h2>
-                    <h5 className="fadeInUp">Clique no botão de download &amp;enjoy best app in the planet.</h5>
+                    <h5 className="fadeInUp">Ajude o meio ambiente a prosperar</h5>
                     <div className="buttons fadeIn m-top-30">
                       <a href="#" className="btn btn-circle hornbill-big-btn bg-sunshine hover-glass">
                         <i className="fa fa-apple" />
@@ -251,7 +241,7 @@ class App extends Component {
                 <div className="col-md-12 footer-widget fadeIn text-lg-left">
                   <div className="footer-logo">
                     <a href="index.html">
-                      <img src="assets/img/logo.png" alt="img" className="img-fluid" width="30%" style={{display: 'block', margin: 'auto'}} />
+                      <img src="assets/img/logo.png" alt="img" className="img-fluid" style={{display: 'block', margin: 'auto'}} />
                     </a>
                   </div>
                 </div>

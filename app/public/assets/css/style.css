@@ -86,13 +86,17 @@
     max-width: 400px;
     margin-top: 60px; }
 
+  .main-logo {
+    max-width: 80%;
+  }
+
 @media (max-width: 767px) {
   #loader-wrapper #loader {
     top: 40%; }
   #loader-wrapper .preloader-logo {
     top: 50%;
-    margin-left: -100px;
-    max-width: 200px; } }
+    margin-left: -180px;
+    max-width: 60%; } }
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -1159,7 +1163,7 @@ ul, ol {
   transition: all 0.1s ease-in-out; }
   .single-service:hover {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
-    border-color: #7f67f3;
+    border-color: #70ba34;
     border-radius: 6px; }
   .single-service p {
     margin: 0; }
@@ -1221,7 +1225,6 @@ ul, ol {
       color: #7F67F3; }
     .features-list .single-feature.text-white h4 {
       color: #fff;
-      text-transform: capitalize;
       font-weight: 100; }
   .features-list.hover-none:hover {
     box-shadow: none;
@@ -1320,7 +1323,6 @@ ul, ol {
   .more-features-list .more-single-feature p {
     margin: 0; }
   .more-features-list .more-single-feature h4 {
-    text-transform: uppercase;
     font-weight: 300;
     font-size: 18px;
     color: #282828; }
@@ -1328,7 +1330,7 @@ ul, ol {
     margin-bottom: 40px;
     margin-right: 10px;
     text-align: center;
-    color: #7F67F3;
+    color: #70ba34;
     float: left;
     width: 60px; }
     .more-features-list .more-single-feature .icon span {
@@ -4028,7 +4030,7 @@ body.body-wine .features-list.hover-none .single-feature:hover {
   .hornbill-navbar.bg-victoria .hornbill-nav {
     background-color: #514683; }
   .hornbill-navbar.bg-wine .hornbill-nav {
-    background-color: #81407d; }
+    background-color: #70ba34; }
   .hornbill-navbar.bg-gray .hornbill-nav {
     background-color: #dbe2ed; }
   .hornbill-navbar.bg-sharp .hornbill-nav {
@@ -4126,7 +4128,7 @@ body.body-wine .features-list.hover-none .single-feature:hover {
       margin-right: auto; }
 
   .big-brand-logo img {
-    max-width: 260px; }
+    max-width: 70%; }
 
   .faq-heading h4 {
     font-size: 20px;
@@ -4385,7 +4387,8 @@ body.body-wine .features-list.hover-none .single-feature:hover {
       margin-top: 0;
       margin-bottom: 25px; }
     .footer-widget .footer-logo {
-      margin-bottom: 20px; }
+      margin-bottom: -20px; }
+    .footer-widget .footer-logo img { width: 70%; }
     .footer-widget .widget-subscribe-form .form-group {
       margin-bottom: 8px; }
 
@@ -4394,6 +4397,8 @@ body.body-wine .features-list.hover-none .single-feature:hover {
     .footer-bottom .btn-footer-bottom {
       margin: 15px auto 7px; } }
 /* End media */
+.footer-widget .footer-logo img { width: 30%; }
+.big-brand-logo img { max-width: 40%; }
 @media only screen and (max-width: 767px) {
   .hide-sm {
     display: none;
@@ -4417,7 +4422,7 @@ body.body-wine .features-list.hover-none .single-feature:hover {
       column-gap: 0rem; }
 
   .hornbill-big-btn {
-    margin-right: 0; }
+    margin-right: 10px; }
 
   .promo-subscribe .subscribe-form .btn-subscribe {
     position: relative; }
@@ -4483,7 +4488,7 @@ body.body-wine .features-list.hover-none .single-feature:hover {
       height: 100px; }
 
   .banner-seven {
-    padding-bottom: 120px; }
+    padding-bottom: 120px; overflow-x: initial}
     .banner-seven:after {
       height: 40px;
       bottom: -2px; }
@@ -4618,7 +4623,7 @@ body.body-wine .features-list.hover-none .single-feature:hover {
       left: 53px; }
 
   .more-feature-section {
-    padding-top: 100px; }
+    padding-top: 50px; }
 
   .single-post-details .single-post-contents .post-content-box {
     margin-left: 15px;
