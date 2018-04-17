@@ -79,17 +79,17 @@ class App extends Component {
               <div className="row">
                 <div className="col-md-6 single-service fadeInUp">
                   <div className="icon">
-                    <img src="assets/img/icons/service-icon-4.png" alt="img" className="img-fluid" />
+                    <img src="assets/img/icons/service-icon-4.png" alt="img" width="85" className="img-fluid" />
                   </div>
                   <h3>Facilitar o Descarte</h3>
-                  <p class="tjustify">Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
+                  <p class="tjustify">Faça a limpeza dos recicláveis sem receio de estar desperdiçando água, separe em um saco ou caixa de papelão e leve ao ponto de reciclagem mais próximo.</p>
                 </div>
                 <div className="col-md-6 single-service fadeInUp">
                   <div className="icon">
-                    <img src="assets/img/icons/service-icon-5.png" alt="img" className="img-fluid" />
+                    <img src="assets/img/icons/service-icon-5.png" alt="img" width="85" className="img-fluid" />
                   </div>
                   <h3>Promover Sustentabilidade</h3>
-                  <p class="tjustify">Sed vehculia semiper sapen quis, gravida massa cursus luctus. Cras at feugiat urna.</p>
+                  <p class="tjustify"> Salvar o planeta é uma atitude complexa e que depende da cooperação de todos. Queremos ajudar nessa luta. </p>
                 </div>
               </div>
               {/* end of row */}
@@ -114,17 +114,17 @@ class App extends Component {
                 <ul className="features-list fadeInRight">
                   <li className="single-feature text-white">
                     <div className="feature-icon">
-                      <span className="bi bi-badge1 text-white" />
+                      <span className="bi bi-tree text-white" />
                     </div>
                     <h4>Ajude o meio ambiente a prosperar</h4>
-                    <p>As cidades onde o Descarte Verde está presente contam com mais oportunidades para as pessoas ganharem dinheiro, menos motoristas embriagados e mais opções de transporte para qualquer lugar, em qualquer horário.</p>
+                    <p>saasas</p>
                   </li>
-                  <li className="single-feature  text-white">
+                  <li className="single-feature text-white">
                     <div className="feature-icon">
-                      <span className="bi bi-support text-white" />
+                      <span className="bi bi-responsive-device text-white" />
                     </div>
                     <h4>Tecnologia que auxilia a sustentabilidade</h4>
-                    <p>A Uber utiliza a tecnologia para auxiliar na segurança dos usuários e motoristas parceiros antes, durante e depois de cada viagem.</p>
+                    <p>O Descarte Verde utiliza da tecnologia para auxiliar seus usuários a contribuir com o meio ambiente.</p>
                   </li>
                 </ul>
               </div>
@@ -210,8 +210,8 @@ class App extends Component {
                 </div>
                 <div className="col-md-8">
                   <div className="promo-download-texts text-white">
-                    <h2 className="fadeInUp">O que você está esperando?</h2>
-                    <h5 className="fadeInUp">Ajude o meio ambiente a prosperar</h5>
+                    <h2 className="fadeInUp">Faça parte dessa comunidade</h2>
+                    <h5 className="fadeInUp">Ajude a manter a sua cidade limpa. A iniciativa vem de você!</h5>
                     <div className="buttons fadeIn m-top-30">
                       <a href="#" className="btn btn-circle hornbill-big-btn bg-sunshine hover-glass">
                         <i className="fa fa-apple" />
