@@ -102,7 +102,7 @@ class App extends Component {
               <div className="card bg-phone-at-hands">
                 <div className="video">
                   <div className="video-inner fadeInLeft">
-                    <button type="button" data-video-id="rNWkha9YKgw" className="play-video-icon js-video-button"><i className="fa fa-play" /></button>
+                    <button type="button" data-video-id="79LqOdJI4jA" className="play-video-icon js-video-button"><i className="fa fa-play" /></button>
                   </div>
                 </div>
               </div>
@@ -117,7 +117,7 @@ class App extends Component {
                       <span className="bi bi-tree text-white" />
                     </div>
                     <h4>Ajude o meio ambiente a prosperar</h4>
-                    <p>saasas</p>
+                    <p>Faça a sua parte, zele pela limpeza dos espaços públicos por meio de pequenos gestos.</p>
                   </li>
                   <li className="single-feature text-white">
                     <div className="feature-icon">
