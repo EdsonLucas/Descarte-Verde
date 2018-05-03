@@ -167,7 +167,7 @@ class App extends Component {
         </main>
         {/* END MAIN SECTION */}
         {/* FOOTER START */}
-        <footer className="footer-section m-sm-top-60">
+        <footer className="footer-section m-sm-top-0">
           <div className="footer-bottom" id="ocean">
             <div className="container">
               <div className="row">
