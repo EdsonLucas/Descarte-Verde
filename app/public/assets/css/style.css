@@ -87,7 +87,12 @@
     margin-top: 60px; }
 
   .main-logo {
-    max-width: 80%;
+    max-width: 75%;
+    border-right: 1px solid #fff;
+  }
+
+  .main-logo2 {
+    max-width: 15%;
   }
 
 @media (max-width: 767px) {

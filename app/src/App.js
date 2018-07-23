@@ -49,7 +49,8 @@ class App extends Component {
             <div className="container relative z-3">
               <div className="row ">
                 <div className="col-lg-6 banner-left text-white ml-lg-auto p-top-100 fadeInRight">
-                  <img src="assets/img/logo-white.png" alt="Descarte Verde" className="main-logo img-fluid mt-lg-5" />
+                  <img src="assets/img/logo-white.png" alt="Descarte Verde" className="main-logo img-fluid mt-lg-5 pr-lg-5" />
+                  <img src="assets/img/green-idea-white.png" className="main-logo2 img-fluid mt-lg-4 pl-lg-4" />
                   <p className="ml-lg-3 mr-lg-3 m-top-40 m-bot-30">Encontre com facilidade os pontos de reciclagem mais próximos a você! O Descarte Verde é uma forma inteligente de lidar com o descarte de resíduos, auxiliando você a encontrar os pontos de coleta para reciclagem ou destinação final ambientalmente correta.</p>
                   <div className="buttons m-top-40">
                     <a href="#" className="btn btn-circle hornbill-big-btn bg-sunshine hover-glass">
