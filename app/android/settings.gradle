@@ -1,0 +1,3 @@
+rootProject.name = 'descarteverde'
+
+include ':app'
