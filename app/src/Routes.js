@@ -1,9 +1,9 @@
 import { StackNavigator, DrawerNavigator } from 'react-navigation';
 
-import Home from './home/Index';
-import Produtos from './products/Index';
-import Pontos from './points/Index';
-import Sobre from './about/Index';
+import Home from 'pages/home';
+import Produtos from 'pages/products';
+import Pontos from 'pages/points';
+import Sobre from 'pages/about';
 
 const Routes = StackNavigator({
     Home: {
