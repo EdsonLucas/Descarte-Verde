@@ -4,7 +4,7 @@ import metrics from './metrics';
 export default {
     box: {
         backgroundColor: colors.white,
-        borderRadius: metrics.baseRadius,
+        borderRadius: 7,
         padding: metrics.basePadding,
     },
 };

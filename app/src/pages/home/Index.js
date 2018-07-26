@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StatusBar } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 class Home extends Component {
     static navigationOptions = {
-        header: null
+        header: null,
+        tabBarIcon: ({ tintColor }) => <Icon name="list-alt" size={20} color={tintColor} />
     };
 
     render() {

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { StyleSheet, View, Text, ImageBackground, Image, StatusBar } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 
  
@@ -13,8 +11,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   image: {
-    width: 320,
-    height: 320,
+    width: 405,
+    height: 72,
   },
   text: {
     color: 'rgba(255, 255, 255, 0.8)',
@@ -36,7 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     textAlign: 'left',
     paddingHorizontal: 16,
-    marginBottom: 16,
+    marginBottom: 10,
     
   },
   button: {
@@ -48,7 +46,7 @@ const slides = [
   {
     key: 'somethun',
     title: '\n A revolução \n de verdade \n começa \n agora',
-    subtitle: 'Conheça a NuConta',
+    subtitle: 'Conheça o Descarte Verde',
     text: '\n Ao ativar sua conta, você aceita \n os termos e condições',
     icon: 'ios-images-outline',
     colors: ['#dff9b8', '#9decaa', '#00c99d'],
@@ -56,19 +54,30 @@ const slides = [
   },
   {
     key: 'somethun1',
-    title: 'Super customizable',
-    text: 'The component is also super customizable, so you can adapt it to cover your needs and wants.',
+    title: '\n A revolução \n de verdade \n começa \n agora',
+    subtitle: 'Conheça o Descarte Verde',
+    text: '\n Ao ativar sua conta, você aceita \n os termos e condições',
     icon: 'ios-options-outline',
     colors: ['#A3A1FF', '#3A3897'],
     remote: require('images/banner.png'),
   },
   {
     key: 'somethun2',
-    title: 'No need to buy me beer',
-    text: 'Usage is all free',
+    title: '\n A revolução \n de verdade \n começa \n agora',
+    subtitle: 'Conheça o Descarte Verde',
+    text: '\n Ao ativar sua conta, você aceita \n os termos e condições',
     icon: 'ios-beer-outline',
     colors: ['#29ABE2', '#4F00BC'],
-    remote: require('images/banner.png'),
+    remote: require('images/banner4.png'),
+  },
+  {
+    key: 'somethun3',
+    title: '\n A revolução \n de verdade \n começa \n agora',
+    subtitle: 'Conheça o Descarte Verde',
+    text: '\n Ao ativar sua conta, você aceita \n os termos e condições',
+    icon: 'ios-beer-outline',
+    colors: ['#29ABE2', '#4F00BC'],
+    remote: require('images/banner4.png'),
   },
 ];
  
@@ -90,6 +99,11 @@ export default class Welcome extends Component {
       source={props.remote}
     >
       <View>
+        <StatusBar barStyle="light-content" />
+        <Image 
+          style={styles.image} 
+          source={{uri: 'http://descarteverde.ml/assets/img/logo-white.png'}} 
+          />
         <Text style={styles.title}>{props.title}</Text>
         <Text style={styles.subtitle}>{props.subtitle}</Text>
         <Text style={styles.text}>{props.text}</Text>
