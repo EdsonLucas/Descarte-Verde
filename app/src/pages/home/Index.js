@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StatusBar, Platform } from 'react-native';
-import Icon from 'react-native-vector-icons/Foundation';
+import { Foundation } from 'fonts';
 import styles from './styles';
 
 class Home extends Component {
     static navigationOptions = {
         header: null,
         swipeEnabled: false,
-        tabBarIcon: ({ tintColor }) => <Icon name="home" size={(Platform.OS === 'ios') ? 18 : 23} color={tintColor} />
+        tabBarIcon: ({ tintColor }) => <Foundation name="home" size={(Platform.OS === 'ios') ? 18 : 23} color={tintColor} />
     };
 
     render() {

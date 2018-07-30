@@ -1,109 +1,46 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, StyleSheet, Platform } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { View, ScrollView, Text, Platform, StatusBar } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 import Display from 'react-native-display';
-import { general, metrics, colors } from 'styles';
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: colors.secundary,
-        paddingTop: metrics.basePadding,
-        paddingBottom: metrics.basePadding,
-    },
-
-    cardContainer: {
-        ...general.box,
-        marginHorizontal: metrics.basePadding,
-        marginTop: metrics.baseMargin,
-        shadowOffset:{ width: 10, height: 10 },
-        shadowColor: colors.black,
-        shadowOpacity: 10,
-        borderLeftColor: colors.success,
-        borderLeftWidth: 8,
-        elevation: 5,
-    },
-
-    cardContainerAfter: {
-        backgroundColor: '#cecece',
-        borderRadius: metrics.baseRadius,
-        marginHorizontal: metrics.basePadding * 2,
-        paddingBottom: metrics.basePadding,
-        marginTop: -10,
-    },
-
-    contextContainer: {
-        ...general.box,
-        marginHorizontal: metrics.basePadding * 2,
-        marginTop: -15,
-    },
-
-    infoTitle: {
-        flexDirection: 'row',
-    },
-
-    itemTitle: {
-        fontWeight: '600',
-        fontSize: 18,
-    },
-
-    infoContainer: {
-        flexDirection: 'row',
-        marginTop: metrics.baseMargin
-    },
-
-    info: {
-        color: colors.dark,
-    },
-
-    infoText: {
-        color: colors.dark,
-        fontSize: 12,
-        marginLeft: metrics.baseMargin / 2
-    }
-});
+import { colors } from 'styles';
+import styles from './styles';
 
 const cards = [ 
     {
         key: '1',
-        title: 'Embalagem Longa Vida',
+        title: 'Metal',
         text: 'Ao ativar sua conta, você aceita \n os termos e condições',
-        content: 'Lorem ipsum...',
-        icon: 'bottle-wine',
-        colors: '#666',
+        contentTitle: 'Materiais Descartáveis:',
+        contentText: 'Tampas \n\n Latas \n\n Panelas sem cabo \n\n Ferragens \n\n Arames',
+        contentText2: 'Chapas \n\n Canos \n\n Pregos \n\n Parafusos \n\n Ferramentas',
+        border: colors.info,
     },
     {
         key: '2',
-        title: 'Metal',
-        text: 'Ao ativar sua conta, você aceita \n os termos e condições',
-        content: 'Lorem ipsum...',
-        icon: 'bottle-wine',
-        colors: '#666',
-    },
-    {
-        key: '3',
         title: 'Papel',
         text: 'Ao ativar sua conta, você aceita \n os termos e condições',
-        content: 'Lorem ipsum...',
-        icon: 'dropbox',
-        colors: '#666',
+        contentTitle: 'Materiais Descartáveis:',
+        contentText: 'Jornais e Revistas \n\n Listas Telefônicas \n\n Papel Sulfite \n\n Papel de Fax \n\n Folhas de Caderno',
+        contentText2: 'Formulários \n\n Caixas em Geral \n\n Fotocópias \n\n Envelopes \n\n Cartazes',
+        border: colors.success,
+    }, 
+    {
+        key: '3',
+        title: 'Plástico',
+        text: 'Ao ativar sua conta, você aceita \n os termos e condições',
+        contentTitle: 'Materiais Descartáveis:',
+        contentText: 'Copos \n\n Sacos/Sacolas \n\n Fracos \n\n Tampas',
+        contentText2: 'Potes \n\n Canos PVC \n\n Tubos PVC \n\n Garrafas Pet',
+        border: colors.warning,
     }, 
     {
         key: '4',
-        title: 'Plástico',
-        text: 'Ao ativar sua conta, você aceita \n os termos e condições',
-        content: 'Lorem ipsum...',
-        icon: 'bottle-wine',
-        colors: '#666',
-    }, 
-    {
-        key: '5',
         title: 'Vidro',
         text: 'Ao ativar sua conta, você aceita \n os termos e condições',
-        content: 'Lorem ipsum...',
-        icon: 'bottle-wine',
-        colors: '#666',
+        contentTitle: 'Materiais Descartáveis:',
+        contentText: 'Garrafas \n\n Potes \n\n Embalagens',
+        contentText2: 'Frascos \n\n Copos \n\n Para-brisas',
+        border: colors.danger,
     }
 ];
 
@@ -120,15 +57,16 @@ export default class Produtos extends Component {
         fontSize: 16,
         fontWeight: 'bold',
         },
-        tabBarIcon: ({ tintColor }) => <Icon name="recycle" size={(Platform.OS === 'ios') ? 18 : 23} color={tintColor} />  
+        tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="recycle" size={(Platform.OS === 'ios') ? 18 : 23} color={tintColor} />  
     }
 
-    _renderHeader(cards, isActive) {
+    _renderHeader(cards) {
         return (
         <View>
-            <View style={styles.cardContainer} key={cards.key}>
+            <StatusBar barStyle="dark-content" />
+            
+            <View style={[styles.cardContainer, { borderLeftColor: cards.border }]} key={cards.key}>
                 <View style={styles.infoTitle}>
-                    <Icon name={cards.icon} size={30} color={cards.colors} />
                     <Text style={styles.itemTitle}>{cards.title}</Text>
                 </View>
                 <View style={styles.infoContainer}>
@@ -137,8 +75,8 @@ export default class Produtos extends Component {
                     </View>
                 </View>            
             </View>
-            <Display enable={(isActive ? true : false)}>
-                <View style={styles.cardContainerAfter}></View>              
+            <Display enable={(Platform.OS === 'ios') ? false : true}>
+                <View style={styles.cardContainerAfter}></View>
             </Display>
         </View>
         )
@@ -146,9 +84,19 @@ export default class Produtos extends Component {
 
      _renderContent(cards) {
         return (
-        <View style={styles.contextContainer}>
-            <Text>{cards.content}</Text>
-        </View>
+        <View>
+            <View style={styles.contentTitle}>
+                <Text>{cards.contentTitle}</Text>
+            </View>
+            <View style={styles.contextContainer}>
+                <View style={styles.contextText}>
+                    <Text>{cards.contentText}</Text>
+                </View>
+                <View style={styles.contextText2}>
+                    <Text>{cards.contentText2}</Text>
+                </View>
+            </View>
+        </View>    
         );
     }
 
@@ -158,7 +106,6 @@ export default class Produtos extends Component {
                 <ScrollView>
                     <Accordion
                         sections={cards}
-                        initiallyActiveSection={0}
                         underlayColor={colors.transparent}
                         renderHeader={this._renderHeader}
                         renderContent={this._renderContent}

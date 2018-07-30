@@ -9,7 +9,7 @@ import Pontos from 'pages/points';
 import Sobre from 'pages/about';
 
 const Routes = StackNavigator({
-    //Welcome: { screen: Welcome },
+    // Welcome: { screen: Welcome },
     Produtos: { screen: Produtos },
     Home: {
         screen: TabNavigator({
@@ -30,6 +30,7 @@ const Routes = StackNavigator({
                 },
                 labelStyle: {
                     fontSize: 11,
+                    marginTop: 0,
                 },
                 style: {
                     backgroundColor: '#edeef1',
