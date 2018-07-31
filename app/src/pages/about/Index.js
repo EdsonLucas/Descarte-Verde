@@ -7,7 +7,7 @@ const Sobre = () => <View />;
 Sobre.navigationOptions = {
     header: null,
     swipeEnabled: false,
-    tabBarIcon: ({ tintColor }) => <Icon name="info" size={(Platform.OS === 'ios') ? 18 : 23} color={tintColor} />
+    tabBarIcon: ({ tintColor }) => <Icon name="info" size={(Platform.OS === 'ios') ? 18 : 20} color={tintColor} />
 }
 
 export default Sobre;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, ScrollView, Text, Platform, StatusBar } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 import Display from 'react-native-display';
+import { MaterialCommunityIcons } from 'fonts';
 import { colors } from 'styles';
 import styles from './styles';
 
@@ -52,12 +53,13 @@ export default class Produtos extends Component {
         backgroundColor: '#fff',
         height: (Platform.OS === 'ios') ? 48 : 50,
         },
-        headerTintColor: '#666',
+        headerTintColor: colors.dark,
         headerTitleStyle: {
-        fontSize: 16,
-        fontWeight: 'bold',
+            fontSize: 16,
+            fontWeight: 'bold',
+            textAlign: 'center'
         },
-        tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="recycle" size={(Platform.OS === 'ios') ? 18 : 23} color={tintColor} />  
+        tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="recycle" size={(Platform.OS === 'ios') ? 18 : 20} color={tintColor} />  
     }
 
     _renderHeader(cards) {

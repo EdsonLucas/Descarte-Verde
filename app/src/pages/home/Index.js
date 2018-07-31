@@ -7,7 +7,7 @@ class Home extends Component {
     static navigationOptions = {
         header: null,
         swipeEnabled: false,
-        tabBarIcon: ({ tintColor }) => <Foundation name="home" size={(Platform.OS === 'ios') ? 18 : 23} color={tintColor} />
+        tabBarIcon: ({ tintColor }) => <Foundation name="home" size={(Platform.OS === 'ios') ? 18 : 20} color={tintColor} />
     };
 
     render() {

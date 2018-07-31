@@ -10,7 +10,6 @@ import Sobre from 'pages/about';
 
 const Routes = StackNavigator({
     // Welcome: { screen: Welcome },
-    Produtos: { screen: Produtos },
     Home: {
         screen: TabNavigator({
             Home: { screen: Home },
@@ -22,7 +21,7 @@ const Routes = StackNavigator({
             tabBarOptions: {
                 showIcon: true,
                 animationEnabled: true,
-                showLabel: (Platform.OS !== 'android'),
+                showLabel: false,
                 activeTintColor: colors.dark,
                 inactiveTintColor: colors.darkTransparent,
                 indicatorStyle: {
@@ -34,7 +33,7 @@ const Routes = StackNavigator({
                 },
                 style: {
                     backgroundColor: '#edeef1',
-                    height: (Platform.OS === 'ios') ? 48 : 50,
+                    height: (Platform.OS === 'ios') ? 48 : 49,
                 },
             },
         }),
