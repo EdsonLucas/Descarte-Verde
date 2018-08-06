@@ -8,8 +8,11 @@ import Produtos from 'pages/products';
 import Pontos from 'pages/points';
 import Sobre from 'pages/about';
 
+import Map from 'pages/map';
+
 const Routes = StackNavigator({
-    // Welcome: { screen: Welcome },
+    Map: { screen: Map },
+    //Welcome: { screen: Welcome },
     //Sobre: { screen: Sobre },
     Home: {
         screen: TabNavigator({

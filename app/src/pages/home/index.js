@@ -19,7 +19,7 @@ class Home extends Component {
                 <Text style={styles.text}>
                     Para continuar, precisamos que você informe seu usuário no Github
                 </Text>
-                
+
                 <View style={styles.form}>
                     <TextInput
                         style={styles.input}

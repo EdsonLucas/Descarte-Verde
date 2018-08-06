@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
 
     cardContainer: {
-        flex: 0.8,
+        flex: 0.9,
         padding: 0,
         justifyContent: 'flex-end',
         marginHorizontal: metrics.baseMargin / 2,

@@ -15,7 +15,19 @@ const styles = StyleSheet.create({
         ...general.topoTitle,
     },
 
+    subContainer: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
     imageContainer: {
+      flexDirection: 'row',
+      alignItems: 'flex-end',
+      marginBottom: metrics.baseMargin,
+    },
+
+    imageSubContainer: {
         paddingVertical: 0,
         paddingHorizontal: metrics.basePadding,
     },

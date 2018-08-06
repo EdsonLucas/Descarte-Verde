@@ -23,5 +23,5 @@ export default {
 
     transparent: 'transparent',
     darkTransparent: 'rgba(0, 0, 0, 0.4)',
-    whiteTransparent: 'rgba(182, 182, 182, 1)'
+    whiteTransparent: 'rgba(255, 255, 255, 0.8)'
 };
