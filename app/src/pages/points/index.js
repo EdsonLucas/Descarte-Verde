@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Platform, StatusBar, ImageBackground } from 'react-native';
-import ResponsiveImage from 'react-native-responsive-image';
 import Carousel from 'react-native-snap-carousel';
 import LinearGradient from 'react-native-linear-gradient';
 import { Entypo } from 'icons';

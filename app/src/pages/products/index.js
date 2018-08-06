@@ -20,7 +20,7 @@ const cards = [
     {
         key: '2',
         title: 'Plástico',
-        text: 'Ao ativar sua conta, você aceita \n os termos e condições',
+        text: 'Podem ser reprocessados por refusão ou remoldagem, onde os plásticos são lavados, fragmentados e triturados, de forma que, uma vez limpos, podem ser fabricados novos produtos a partir deles.',
         contentTitle: 'Materiais Descartáveis:',
         contentText: 'Copos \n\n Sacos/Sacolas \n\n Fracos \n\n Tampas',
         contentText2: 'Potes \n\n Canos PVC \n\n Tubos PVC \n\n Garrafas Pet',
@@ -38,7 +38,7 @@ const cards = [
     {
       key: '4',
       title: 'Metal',
-      text: 'Ao ativar sua conta, você aceita \n os termos e condições',
+      text: 'Para economizar matéria-prima, as indústrias siderúrgicas costumam adicionar sucatas de aço para produzir mais aço novo.',
       contentTitle: 'Materiais Descartáveis:',
       contentText: 'Tampas \n\n Latas \n\n Panelas sem cabo \n\n Ferragens \n\n Arames',
       contentText2: 'Chapas \n\n Canos \n\n Pregos \n\n Parafusos \n\n Ferramentas',
