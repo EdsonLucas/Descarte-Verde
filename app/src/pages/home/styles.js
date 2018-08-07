@@ -4,10 +4,14 @@ import { general, colors, metrics} from 'styles';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.secundary,
-        padding: metrics.basePadding * 2,
-        // justifyContent: 'center',
-        // alignItems: 'stretch',
+        paddingTop: metrics.baseMargin * 5,
+        paddingHorizontal: metrics.basePadding,
+    },
+
+    imageContainer: {
+        flex: 0.4,
+        alignItems: 'center',
+        marginBottom: metrics.baseMargin,
     },
 
     title: {
@@ -15,6 +19,7 @@ const styles = StyleSheet.create({
         color: colors.white,
         fontSize: 24,
         fontWeight: 'bold',
+        marginTop: metrics.baseMargin * 5,
     },
 
     text: {
@@ -26,21 +31,20 @@ const styles = StyleSheet.create({
     },
 
     form: {
-        marginTop: metrics.baseMargin * 2,
+        flex: 0.6,
+        justifyContent: 'flex-end',
     },
 
-    input: {
-        backgroundColor: colors.white,
-        borderRadius: metrics.baseRadius,
-        height: 44,
-        paddingHorizontal: metrics.basePadding,
+    subForm: {
+        flexDirection: 'row',
     },
 
     button: {
+        flex: 1,
         backgroundColor: colors.primary,
         borderRadius: metrics.baseRadius,
-        height: 44,
-        marginTop: metrics.baseMargin,
+        margin: metrics.baseMargin,
+        height: 120,
         justifyContent: 'center',
         alignItems: 'center',
     },
