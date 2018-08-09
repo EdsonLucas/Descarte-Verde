@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
         flex: 0.6,
         paddingHorizontal: metrics.basePadding,
         justifyContent: 'flex-end',
-        backgroundColor: 'red',
     },
 
     subForm: {

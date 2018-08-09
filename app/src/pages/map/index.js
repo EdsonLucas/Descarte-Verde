@@ -74,7 +74,7 @@ export default class Map extends Component {
 
     return (
         <View style={styles.container}>
-            <StatusBar barStyle="light-content" />
+            <StatusBar barStyle={(Platform.OS === 'ios') ? 'dark-content' : 'light-content'} />
             <View style={styles.topoContainer}>
                 <Text style={styles.topoTitle}>Pontos de Descarte</Text>
             </View>
@@ -85,7 +85,7 @@ export default class Map extends Component {
             zoomEnabled={true}
             scrollEnabled={false}
             showUserLocation={true}
-            attributionEnabled={false}
+            attributionEnabled={(Platform.OS === 'ios') ? true : false}
             logoEnabled={false}
             centerCoordinate={[longitude, latitude]}
             style={styles.mapContainer}
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   mapContainer: {
     flex: 1,
     position: 'absolute',
-    top: (Platform.OS === 'android') ? 65 : 50,
+    top: (Platform.OS === 'android') ? 65 : 85,
     left: 0,
     right: 0,
     bottom: 0,

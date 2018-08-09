@@ -54,7 +54,7 @@ export default class Produtos extends Component {
         tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="recycle" size={(Platform.OS === 'ios') ? 18 : 20} color={tintColor} />
     }
 
-    _renderHeader(cards, isActive) {
+    _renderHeader(cards, index, isActive) {
         return (
         <View>
             <View style={[styles.cardContainer, { borderLeftColor: cards.border }]} key={cards.key}>
