@@ -74,7 +74,7 @@ export default class Map extends Component {
     }
 
   render() {
-    //[-40.2996606, -20.3540692]
+
     const { latitude, longitude } = this.state.locations[0];
 
     return (

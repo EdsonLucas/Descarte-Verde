@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, StatusBar, Text, Platform, Image } from 'react-native';
+import { View, StyleSheet, StatusBar, Text, Platform } from 'react-native';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
 import { MaterialCommunityIcons } from 'icons';
 import Carousel from 'react-native-snap-carousel';
@@ -50,7 +50,13 @@ export default class Map extends Component {
                 id={location.title}
                 coordinate={[parseFloat(location.longitude), parseFloat(location.latitude)]}
             >
-                <Image source={require('images/marker.png')} style={{ flex: 1, resizeMode: 'contain', width: 30, height: 30 }}
+                <View style={styles.annotationContainer}>
+                    <View style={styles.annotationFill} />
+                </View>
+
+                <Image
+                    source={require('images/marker.png')}
+                    style={{ flex: 1, resizeMode: 'contain', width: 25, height: 25 }}
                 />
             </Mapbox.PointAnnotation>
             )
@@ -74,7 +80,7 @@ export default class Map extends Component {
     }
 
   render() {
-    //[-40.2996606, -20.3540692]
+
     const { latitude, longitude } = this.state.locations[0];
 
     return (
@@ -85,7 +91,7 @@ export default class Map extends Component {
             </View>
 
             <Mapbox.MapView
-            styleURL={Mapbox.StyleURL.Dark}
+            styleURL={Mapbox.StyleURL.Street}
             zoomLevel={16}
             zoomEnabled={true}
             scrollEnabled={false}

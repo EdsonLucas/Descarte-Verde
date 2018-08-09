@@ -50,7 +50,9 @@ export default class Map extends Component {
                 id={location.title}
                 coordinate={[parseFloat(location.longitude), parseFloat(location.latitude)]}
             >
-                <Image source={require('images/marker.png')} style={{ flex: 1, resizeMode: 'contain', width: 30, height: 30 }}
+                <Image
+                    source={require('images/marker.png')}
+                    style={{ flex: 1, resizeMode: 'contain', width: 25, height: 25 }}
                 />
             </Mapbox.PointAnnotation>
             )
@@ -74,7 +76,7 @@ export default class Map extends Component {
     }
 
   render() {
-    //[-40.2996606, -20.3540692]
+
     const { latitude, longitude } = this.state.locations[0];
 
     return (
@@ -85,7 +87,7 @@ export default class Map extends Component {
             </View>
 
             <Mapbox.MapView
-            styleURL={Mapbox.StyleURL.Dark}
+            styleURL={Mapbox.StyleURL.Street}
             zoomLevel={16}
             zoomEnabled={true}
             scrollEnabled={false}

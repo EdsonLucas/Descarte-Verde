@@ -11,8 +11,8 @@ import Sobre from 'pages/about';
 import Map from 'pages/map';
 
 const Routes = StackNavigator({
-    Map: { screen: Map },
-    Welcome: { screen: Welcome },
+    //Map: { screen: Map },
+    //Welcome: { screen: Welcome },
     //Sobre: { screen: Sobre },
     Home: {
         screen: TabNavigator({

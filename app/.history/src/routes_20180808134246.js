@@ -12,7 +12,7 @@ import Map from 'pages/map';
 
 const Routes = StackNavigator({
     Map: { screen: Map },
-    Welcome: { screen: Welcome },
+    //Welcome: { screen: Welcome },
     //Sobre: { screen: Sobre },
     Home: {
         screen: TabNavigator({

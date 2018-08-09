@@ -74,7 +74,7 @@ export default class Map extends Component {
     }
 
   render() {
-    //[-40.2996606, -20.3540692]
+
     const { latitude, longitude } = this.state.locations[0];
 
     return (
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
 
   topoContainer: {
     ...general.topoContainer,
-    backgroundColor: colors.white,
+    //backgroundColor: colors.white,
     marginTop: 0,
     paddingTop: (Platform.OS === 'ios') ? 24 : 0,
   },

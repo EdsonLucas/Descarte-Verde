@@ -74,7 +74,7 @@ export default class Map extends Component {
     }
 
   render() {
-    //[-40.2996606, -20.3540692]
+
     const { latitude, longitude } = this.state.locations[0];
 
     return (
@@ -85,7 +85,7 @@ export default class Map extends Component {
             </View>
 
             <Mapbox.MapView
-            styleURL={Mapbox.StyleURL.Dark}
+            styleURL={Mapbox.StyleURL.Street}
             zoomLevel={16}
             zoomEnabled={true}
             scrollEnabled={false}

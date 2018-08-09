@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, StatusBar, Text, Platform, Image } from 'react-native';
+import { View, StyleSheet, StatusBar, Text, Platform } from 'react-native';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
 import { MaterialCommunityIcons } from 'icons';
 import Carousel from 'react-native-snap-carousel';
-import ResponsiveImage from 'react-native-responsive-image';
 import { general, metrics, colors } from 'styles';
+import ResponsiveImage from '../../../node_modules/react-native-responsive-image';
 
 Mapbox.setAccessToken('pk.eyJ1IjoibWFyZG9jIiwiYSI6ImNqa2dzZGd6ZzUyZmkzcW1sZTFrOW1qb2MifQ.3RxRm6kVGjV7AYTE8iMTSg');
 
@@ -50,8 +50,11 @@ export default class Map extends Component {
                 id={location.title}
                 coordinate={[parseFloat(location.longitude), parseFloat(location.latitude)]}
             >
-                <Image source={require('images/marker.png')} style={{ flex: 1, resizeMode: 'contain', width: 30, height: 30 }}
-                />
+                <View style={styles.annotationContainer}>
+                    <View style={styles.annotationFill} />
+                </View>
+
+                <Mapbox.Callout title={location.title} />
             </Mapbox.PointAnnotation>
             )
         )
@@ -61,20 +64,26 @@ export default class Map extends Component {
 
     _renderItem ({item, index}) {
         return (
-            <View key={item.key} style={styles.cardContainer} >
-                <View style={styles.imageContainer}>
-                    <ResponsiveImage style={{ resizeMode: 'stretch' }} source={ item.image } initWidth={100} initHeight={190} />
-                </View>
+            <View key={item.key} style={styles.cardContainer}>
                 <View style={styles.subContainer}>
+                    <View>
+                        <ResponsiveImage style={{resizeMode: 'stretch'}}  source={item.image} initWidth={80} initHeight={80} />
+                    </View>
+
+
                     <Text style={styles.title}>{item.title}</Text>
                     <Text style={styles.description}>{item.description}</Text>
+
+                    <View>
+                        <MaterialCommunityIcons name="map-marker-distance" size={(Platform.OS === 'ios') ? 18 : 20} color={colors.dark} />
+                    </View>
                 </View>
             </View>
         );
     }
 
   render() {
-    //[-40.2996606, -20.3540692]
+
     const { latitude, longitude } = this.state.locations[0];
 
     return (
@@ -85,7 +94,7 @@ export default class Map extends Component {
             </View>
 
             <Mapbox.MapView
-            styleURL={Mapbox.StyleURL.Dark}
+            styleURL={Mapbox.StyleURL.Street}
             zoomLevel={16}
             zoomEnabled={true}
             scrollEnabled={false}
@@ -173,35 +182,10 @@ const styles = StyleSheet.create({
   },
 
   cardContainer: {
-      flexDirection: 'row',
       width: metrics.screenWidth - 130,
       backgroundColor: '#FFF',
       borderRadius: metrics.baseRadius,
+      padding: metrics.basePadding * 2,
       marginVertical: metrics.baseMargin * 5,
-      padding: 0,
-      shadowOffset:{ width: 5, height: 5 },
-      shadowColor: colors.black,
-      shadowOpacity: 0.5,
-      elevation: 5,
   },
-
-  imageContainer: {
-      justifyContent: 'center',
-      borderRadius: metrics.baseRadius,
-  },
-
-  subContainer: {
-      flex: 1,
-      justifyContent: 'center',
-      padding: metrics.basePadding,
-  },
-
-  title: {
-    ...general.title,
-      paddingBottom: metrics.basePadding / 10,
-  },
-
-  description: {
-    ...general.text
-  }
 });

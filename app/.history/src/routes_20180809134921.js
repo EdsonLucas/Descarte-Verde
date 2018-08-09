@@ -7,10 +7,12 @@ import Home from 'pages/home';
 import Produtos from 'pages/products';
 import Pontos from 'pages/points';
 import Sobre from 'pages/about';
+import Teste from 'pages/teste';
 
 import Map from 'pages/map';
 
 const Routes = StackNavigator({
+    Teste: { screen: Teste },
     Map: { screen: Map },
     Welcome: { screen: Welcome },
     //Sobre: { screen: Sobre },
