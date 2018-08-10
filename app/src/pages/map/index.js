@@ -17,7 +17,7 @@ export default class Map extends Component {
       locations: [
         {
           key: '1',
-          title: 'PEV - (Ponto de Entrega Voluntária)',
+          title: 'PEV',
           description: 'teste',
           image: require('images/pev.jpg'),
           latitude: -20.3540692,
@@ -63,11 +63,13 @@ export default class Map extends Component {
         return (
             <View key={item.key} style={styles.cardContainer} >
                 <View style={styles.imageContainer}>
-                    <ResponsiveImage style={{ resizeMode: 'stretch' }} source={ item.image } initWidth={100} initHeight={190} />
+                    <ResponsiveImage style={{ resizeMode: 'stretch' }} borderRadius={3} source={ item.image } initWidth={100} initHeight={200} />
                 </View>
                 <View style={styles.subContainer}>
                     <Text style={styles.title}>{item.title}</Text>
-                    <Text style={styles.description}>{item.description}</Text>
+                    <View style={styles.descriptionContainer}>
+                        <Text style={styles.description}>{item.description}</Text>
+                    </View>
                 </View>
             </View>
         );
@@ -167,8 +169,9 @@ const styles = StyleSheet.create({
 
   placeContainer: {
     flex: 1,
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
+    marginTop: metrics.baseMargin * 33,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
     paddingHorizontal: metrics.basePadding,
   },
 
@@ -188,11 +191,12 @@ const styles = StyleSheet.create({
   imageContainer: {
       justifyContent: 'center',
       borderRadius: metrics.baseRadius,
+      marginLeft: -20,
   },
 
   subContainer: {
       flex: 1,
-      justifyContent: 'center',
+      alignItems: 'flex-start',
       padding: metrics.basePadding,
   },
 
@@ -201,7 +205,15 @@ const styles = StyleSheet.create({
       paddingBottom: metrics.basePadding / 10,
   },
 
+  descriptionContainer: {
+    backgroundColor: colors.main,
+    paddingVertical: metrics.basePadding / 7,
+    paddingHorizontal: metrics.basePadding / 4,
+    borderRadius: metrics.baseRadius * 3,
+  },
+
   description: {
-    ...general.text
+    ...general.text,
+    color: colors.white,
   }
 });
