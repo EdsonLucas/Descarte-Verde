@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground, StatusBar, AsyncStorage } from 'react-native';
 import { NavigationActions } from 'react-navigation';
-import AppIntroSlider from 'react-native-app-intro-slider';
 import ResponsiveImage from 'react-native-responsive-image';
+import AppIntroSlider from 'react-native-app-intro-slider';
 import { general, metrics, colors } from 'styles';
-import styles from './styles';
+import style from './styles';
 
 const slides = [
   {

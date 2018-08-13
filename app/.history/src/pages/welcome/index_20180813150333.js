@@ -4,7 +4,7 @@ import { NavigationActions } from 'react-navigation';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import ResponsiveImage from 'react-native-responsive-image';
 import { general, metrics, colors } from 'styles';
-import styles from './styles';
+import style from './styles';
 
 const slides = [
   {

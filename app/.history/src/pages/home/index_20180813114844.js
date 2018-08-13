@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StatusBar, Platform, ImageBackground } fr
 import LinearGradient from 'react-native-linear-gradient';
 import ResponsiveImage from 'react-native-responsive-image';
 import { Foundation } from 'icons';
+import { NavigationActions } from 'react-navigation';
 import { metrics, colors } from 'styles';
 import styles from './styles';
 

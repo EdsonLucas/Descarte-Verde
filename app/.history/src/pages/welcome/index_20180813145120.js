@@ -1,10 +1,45 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, StatusBar, AsyncStorage } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, StatusBar, AsyncStorage } from 'react-native';
+import ResponsiveImage from 'react-native-responsive-image';
 import { NavigationActions } from 'react-navigation';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import ResponsiveImage from 'react-native-responsive-image';
-import { general, metrics, colors } from 'styles';
-import styles from './styles';
+import {general, metrics, colors} from 'styles';
+
+const styles = StyleSheet.create({
+  mainContent: {
+    flex: 1,
+    alignItems: 'stretch',
+    justifyContent: 'space-around',
+    paddingHorizontal: metrics.basePadding,
+  },
+
+  title: {
+    ...general.title,
+    fontSize: 45,
+    color: colors.white,
+    textAlign: 'left',
+    marginBottom: 16,
+    fontWeight: 'bold',
+  },
+
+  subtitle: {
+    ...general.title,
+    fontSize: 20,
+    color: colors.white,
+    backgroundColor: colors.transparent,
+    textAlign: 'left',
+    paddingHorizontal: 16,
+  },
+
+  text: {
+    ...general.text,
+    color: colors.white,
+    backgroundColor: colors.transparent,
+    textAlign: 'left',
+    paddingHorizontal: 16,
+  },
+
+});
 
 const slides = [
   {
@@ -40,7 +75,7 @@ export default class Welcome extends Component {
     }
 
     isFirstUser = async (firstUse) => {
-      await AsyncStorage.setItem('@DescarteVerde:firstUse', firstUse.toString());
+      await AsyncStorage.setItem('@DescarteVerde:firstUse', firstUse);
     }
 
     welcome = async () => {
@@ -99,7 +134,7 @@ export default class Welcome extends Component {
         nextLabel = 'Avançar'
         doneLabel = 'Vamos lá!'
         onSkip = { this.welcome.bind(this) }
-        onDone = { this.welcome.bind(this) }
+        onDone = { this.welcome }
       />
     );
   }

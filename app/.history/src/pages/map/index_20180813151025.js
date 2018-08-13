@@ -83,7 +83,7 @@ export default class Map extends Component {
         return (
             <View key={item.key} style={styles.cardContainer} >
                 <View style={styles.imageContainer}>
-                    <ResponsiveImage style={{ resizeMode: 'stretch' }} borderRadius={3} source={ item.image } initWidth={(Platform.OS === 'android') ? 120 : 100} initHeight={210} />
+                    <ResponsiveImage style={{ resizeMode: 'stretch' }} borderRadius={3} source={ item.image } initWidth={100} initHeight={210} />
                 </View>
                 <View style={styles.subContainer}>
                     <Text style={styles.title}>{item.title}</Text>
@@ -102,7 +102,7 @@ export default class Map extends Component {
 
                 <View style={styles.routeContainer}>
                     <TouchableHighlight underlayColor={colors.primary} style={styles.routeButton} onPress={ () => {}}>
-                        <MaterialCommunityIcons name="directions" size={(Platform.OS === 'ios') ? 20 : 25} color={colors.white} />
+                        <MaterialCommunityIcons name="directions" size={(Platform.OS === 'ios') ? 20 : 30} color={colors.white} />
                     </TouchableHighlight>
                 </View>
             </View>

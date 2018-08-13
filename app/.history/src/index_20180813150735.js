@@ -12,6 +12,7 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
+    AsyncStorage.clear();
     const firstUse = await AsyncStorage.getItem('@DescarteVerde:firstUse');
 
     this.appLoaded(firstUse);

@@ -20,7 +20,7 @@ export default class App extends Component {
   appLoaded = (firstUse) => {
     this.setState({
       checkUse: true,
-      isFirstUse: !firstUse
+      isFirstUse: !!firstUse
     })
   }
 

@@ -1,10 +1,45 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, StatusBar, AsyncStorage } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, StatusBar, AsyncStorage } from 'react-native';
+import ResponsiveImage from 'react-native-responsive-image';
 import { NavigationActions } from 'react-navigation';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import ResponsiveImage from 'react-native-responsive-image';
-import { general, metrics, colors } from 'styles';
-import styles from './styles';
+import {general, metrics, colors} from 'styles';
+
+const styles = StyleSheet.create({
+  mainContent: {
+    flex: 1,
+    alignItems: 'stretch',
+    justifyContent: 'space-around',
+    paddingHorizontal: metrics.basePadding,
+  },
+
+  title: {
+    ...general.title,
+    fontSize: 45,
+    color: colors.white,
+    textAlign: 'left',
+    marginBottom: 16,
+    fontWeight: 'bold',
+  },
+
+  subtitle: {
+    ...general.title,
+    fontSize: 20,
+    color: colors.white,
+    backgroundColor: colors.transparent,
+    textAlign: 'left',
+    paddingHorizontal: 16,
+  },
+
+  text: {
+    ...general.text,
+    color: colors.white,
+    backgroundColor: colors.transparent,
+    textAlign: 'left',
+    paddingHorizontal: 16,
+  },
+
+});
 
 const slides = [
   {
@@ -36,19 +71,19 @@ export default class Welcome extends Component {
     };
 
     state = {
-      firstUse: true
+      firstUSe: true
     }
 
-    isFirstUser = async (firstUse) => {
-      await AsyncStorage.setItem('@DescarteVerde:firstUse', firstUse.toString());
+    isFirstUser = async (firstUSe) => {
+      await AsyncStorage.setItem('@DescarteVerde:firstUse', firstUSe);
     }
 
     welcome = async () => {
-      await this.setState({ firstUse: false });
+      const { firstUSe } = this.state;
 
-      const { firstUse } = this.state;
+      this.setState({ firstUSe: false });
 
-      await this.isFirstUser(firstUse);
+      await this.isFirstUser(firstUse).bind(this);
 
       try {
         const resetAction = NavigationActions.reset({
@@ -98,8 +133,8 @@ export default class Welcome extends Component {
         skipLabel = 'Pular'
         nextLabel = 'Avançar'
         doneLabel = 'Vamos lá!'
-        onSkip = { this.welcome.bind(this) }
-        onDone = { this.welcome.bind(this) }
+        onSkip = { this.welcome }
+        onDone = { this.welcome }
       />
     );
   }
