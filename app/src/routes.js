@@ -10,16 +10,15 @@ import Sobre from 'pages/about';
 
 import Map from 'pages/map';
 
-const Routes = StackNavigator({
-    Map: { screen: Map },
-    //Welcome: { screen: Welcome },
-    //Sobre: { screen: Sobre },
+const createNavigator = (isFirstUse = true) =>
+  StackNavigator({
+    Welcome: { screen: Welcome },
     Home: {
         screen: TabNavigator({
             Home: { screen: Home, navigationOptions: { tabBarLabel: 'Início', } },
-            Produtos: { screen: Produtos, navigationOptions: { tabBarLabel: 'Materiais descarte', } },
-            Pontos: { screen: Pontos, navigationOptions: { tabBarLabel: 'Pontos descarte', } },
-            Sobre: { screen: Sobre, navigationOptions: { tabBarLabel: 'Sobre', } },
+            Produtos: { screen: Produtos },
+            Pontos: { screen: Pontos },
+            Sobre: { screen: Sobre },
         }, {
             tabBarPosition: 'bottom',
             tabBarOptions: {
@@ -30,7 +29,7 @@ const Routes = StackNavigator({
                 activeTintColor: colors.main2,
                 inactiveTintColor: colors.regular,
                 indicatorStyle: {
-                        backgroundColor: '#edeef1',
+                    backgroundColor: '#edeef1',
                 },
                 labelStyle: {
                     fontSize: 11,
@@ -43,7 +42,9 @@ const Routes = StackNavigator({
             },
         }),
     },
-    initialRouteName: "Home",
-});
+    Map: { screen: Map },
+    }, {
+      initialRouteName: isFirstUse ? "Welcome" : "Home",
+  });
 
-export default Routes;
+export default createNavigator;

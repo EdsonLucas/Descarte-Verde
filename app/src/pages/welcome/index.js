@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, ImageBackground, StatusBar } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, StatusBar, AsyncStorage } from 'react-native';
 import ResponsiveImage from 'react-native-responsive-image';
+import { NavigationActions } from 'react-navigation';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import {general, metrics, colors} from 'styles';
 
@@ -69,6 +70,35 @@ export default class Welcome extends Component {
       header: null
     };
 
+    state = {
+      firstUSe: true
+    }
+
+    isFirstUser = async (firstUSe) => {
+      await AsyncStorage.setItem('@DescarteVerde:firstUse', firstUSe);
+    }
+
+    welcome = async () => {
+      const { firstUSe } = this.state;
+
+      this.setState({ firstUSe: false });
+
+      await this.isFirstUser(firstUse);
+
+      try {
+        const resetAction = NavigationActions.reset({
+          index: 0,
+          actions: [
+            NavigationActions.navigate({ routeName: 'Home' }),
+          ],
+        });
+
+        this.props.navigation.dispatch(resetAction);
+      } catch(err) {
+        // erro
+      }
+    }
+
   _renderItem = props => (
     <ImageBackground
       style={[styles.mainContent, {
@@ -103,8 +133,8 @@ export default class Welcome extends Component {
         skipLabel = 'Pular'
         nextLabel = 'Avançar'
         doneLabel = 'Vamos lá!'
-        onSkip = { () =>  this.props.navigation.navigate('Home') }
-        onDone = { () =>  this.props.navigation.navigate('Home') }
+        onSkip = { this.welcome }
+        onDone = { this.welcome }
       />
     );
   }

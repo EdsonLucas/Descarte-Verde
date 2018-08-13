@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StatusBar, Platform, ImageBackground } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import ResponsiveImage from 'react-native-responsive-image';
-import { Foundation, MaterialCommunityIcons, Ionicons } from 'icons';
+import { Foundation } from 'icons';
 import { NavigationActions } from 'react-navigation';
 import { metrics, colors } from 'styles';
 import styles from './styles';
@@ -31,7 +31,7 @@ class Home extends Component {
                     </Text>
 
                     <View style={styles.centerForm}>
-                        <ImageBackground style={styles.imageBackground} source={require('images/plastico.jpg')}>
+                        <ImageBackground style={[styles.imageBackground, {width: metrics.screenWidth / 1.14}]} source={require('images/plastico.jpg')}>
                             <TouchableOpacity style={styles.button} onPress={ () => this.props.navigation.navigate('Map') }>
                                 <Text style={styles.buttonText}>Plástico</Text>
                             </TouchableOpacity>

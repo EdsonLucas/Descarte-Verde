@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     imageContainer: {
       flexDirection: 'row',
       alignItems: 'flex-end',
-      marginBottom: metrics.baseMargin,
+      marginBottom: metrics.baseMargin * 3,
     },
 
     imageSubContainer: {
@@ -33,34 +33,27 @@ const styles = StyleSheet.create({
     },
 
     cardContainer: {
-        ...general.box,
         marginHorizontal: metrics.baseMargin * 2,
         marginVertical: metrics.baseMargin,
-        padding: metrics.basePadding,
-
-        shadowOffset:{ width: 5, height: 5 },
-        shadowColor: colors.black,
-        shadowOpacity: 0.5,
-
-        elevation: 5,
     },
 
     textContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        padding: metrics.basePadding / 5,
+        paddingHorizontal: metrics.basePadding / 5,
     },
 
     title: {
         ...general.title,
         fontSize: 18,
         marginBottom: metrics.baseMargin,
+        color: colors.white,
     },
 
     description: {
         fontSize: 14,
         fontFamily: 'Roboto-Light',
-        color: colors.text,
+        color: colors.white,
     },
 
 });

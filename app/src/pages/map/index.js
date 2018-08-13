@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, StatusBar, Text, Platform, Image } from 'react-native';
+import { View, StyleSheet, StatusBar, TouchableOpacity, TouchableHighlight, Text, Platform, Image } from 'react-native';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
-import { MaterialCommunityIcons } from 'icons';
+import { MaterialCommunityIcons, Ionicons } from 'icons';
 import Carousel from 'react-native-snap-carousel';
 import ResponsiveImage from 'react-native-responsive-image';
 import { general, metrics, colors } from 'styles';
 
 Mapbox.setAccessToken('pk.eyJ1IjoibWFyZG9jIiwiYSI6ImNqa2dzZGd6ZzUyZmkzcW1sZTFrOW1qb2MifQ.3RxRm6kVGjV7AYTE8iMTSg');
+
+const colorObj = {
+    red: colors.danger,
+    green: colors.success,
+    blue: colors.primary,
+    orange: colors.warning,
+};
 
 export default class Map extends Component {
     static navigationOptions = {
@@ -18,19 +25,13 @@ export default class Map extends Component {
         this._renderItem = this._renderItem.bind(this);
     }
 
-    onNavigationStateChange(navState) {
-        this.setState({
-            canGoBack: navState.canGoBack
-        });
-    }
-
     state = {
       locations: [
         {
           key: '1',
           title: 'PEV',
           subtitle: 'Prédio Azul - 1º andar',
-          description: ['Papel', 'Plástico', 'Vidro', 'Vidro'],
+          description: ['Papel', 'Plástico', 'Vidro', 'Metal'],
           image: require('images/pev.jpg'),
           latitude: -20.3540692,
           longitude: -40.2996606,
@@ -39,7 +40,7 @@ export default class Map extends Component {
           key: '2',
           title: 'Comércio',
           subtitle: 'Prédio de Direito - 2º andar',
-          description: ['Papel', 'Plástico', 'Vidro', 'Vidro'],
+          description: ['Papel', 'Plástico', 'Vidro', 'Metal'],
           image: require('images/cooperativa.jpg'),
           latitude: -20.3555145,
           longitude: -40.2992553,
@@ -48,7 +49,7 @@ export default class Map extends Component {
           key: '3',
           title: 'Cooperativa',
           subtitle: '',
-          description: ['Papel', 'Plástico', 'Vidro', 'Vidro'],
+          description: ['Papel', 'Plástico', 'Vidro', 'Metal'],
           image: require('images/comercio.jpg'),
           latitude: -20.334076,
           longitude: -40.295269,
@@ -86,18 +87,22 @@ export default class Map extends Component {
                 <View style={styles.subContainer}>
                     <Text style={styles.title}>{item.title}</Text>
                     <Text style={styles.subTitle}>{item.subtitle}</Text>
+
                     <View style={styles.rowContainer}>
                         {
                             item.description.map(description => (
-                                <View key={item.key} style={styles.descriptionContainer}>
+                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj.green } ]}>
                                     <Text style={styles.description}>{description}</Text>
                                 </View>
                             ))
                         }
                     </View>
-                    <View>
-                        <MaterialCommunityIcons name="directions" size={(Platform.OS === 'ios') ? 20 : 30} color={colors.primary} />
-                    </View>
+                </View>
+
+                <View style={styles.routeContainer}>
+                    <TouchableHighlight underlayColor={colors.primary} style={styles.routeButton} onPress={ () => {}}>
+                        <MaterialCommunityIcons name="directions" size={(Platform.OS === 'ios') ? 20 : 30} color={colors.white} />
+                    </TouchableHighlight>
                 </View>
             </View>
         );
@@ -114,10 +119,10 @@ export default class Map extends Component {
                 {
                     Platform.OS === 'ios' &&
                     <TouchableOpacity
-                        disabled={!this.state.canGoBack}
-                        onPress={this.onBack.bind(this)}
+                        style={{flex: 0.2, alignItems: 'center', justifyContent: 'center'}}
+                        onPress={() => this.props.navigation.goBack()}
                         >
-                        <Text style={styles.topbarText}>Go Back</Text>
+                        <Ionicons name="ios-arrow-back" size={35} color={colors.text} />
                     </TouchableOpacity>
                 }
                 <Text style={styles.topoTitle}>Pontos de Descarte</Text>
@@ -176,6 +181,7 @@ const styles = StyleSheet.create({
 
   topoContainer: {
     ...general.topoContainer,
+    flexDirection: 'row',
     backgroundColor: colors.white,
     marginTop: 0,
     paddingTop: (Platform.OS === 'ios') ? 24 : 0,
@@ -213,7 +219,7 @@ const styles = StyleSheet.create({
 
   cardContainer: {
       flexDirection: 'row',
-      width: metrics.screenWidth - 130,
+      width: metrics.screenWidth - 110,
       backgroundColor: '#FFF',
       borderRadius: metrics.baseRadius,
       marginVertical: metrics.baseMargin * 5,
@@ -261,5 +267,16 @@ const styles = StyleSheet.create({
   description: {
     ...general.text,
     color: colors.white,
-  }
+  },
+
+  routeContainer: {
+    flex: 0.3,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+
+  routeButton: {
+    backgroundColor: colors.primary,
+    padding: 8,
+  },
 });

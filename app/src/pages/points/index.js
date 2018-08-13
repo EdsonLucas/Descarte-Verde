@@ -17,7 +17,7 @@ const points = [
     {
         key: '2',
         title: 'Comércios',
-        description: 'Locais que compram material longa vida (e outros materiais recicláveis) para beneficiamento e envio aos recicladores. Eles adquirem o material, geralmente em grande quantidade, principalmente das cooperativas.',
+        description: 'Locais que compram materiais recicláveis para beneficiamento e envio aos recicladores. Eles adquirem o material, geralmente em grande quantidade, principalmente das cooperativas.',
         image: require('images/comercio.jpg'),
     },
 

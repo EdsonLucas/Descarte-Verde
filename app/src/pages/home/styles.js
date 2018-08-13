@@ -42,11 +42,8 @@ const styles = StyleSheet.create({
     },
 
     centerForm: {
-        alignItems: 'center',
-        height: 120,
-        marginHorizontal: metrics.baseMargin / 2.5,
+        flex: 1,
         marginTop: metrics.baseMargin,
-        backgroundColor: colors.transparent,
     },
 
     imageBackground: {
