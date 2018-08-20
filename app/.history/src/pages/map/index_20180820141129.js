@@ -17,6 +17,10 @@ const colorObj = {
     metal: colors.warning,
 };
 
+string_parameterize = (str1) => {
+  return str1.trim().toLowerCase().replace(/[ˆa-zA-Z0-9 -]/, "").replace(/\s/g, "-");
+}
+
 export default class Map extends Component {
     static navigationOptions = {
         header: null,
@@ -26,10 +30,6 @@ export default class Map extends Component {
         super(props);
         this._renderItem = this._renderItem.bind(this);
     }
-
-    string_parameterize = function (str1) {
-      return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-").replace(new RegExp('[áàâã]','gi'), 'a');
-  };
 
     state = {
       locations: [
@@ -98,7 +98,7 @@ export default class Map extends Component {
                     <View style={styles.rowContainer}>
                         {
                             item.description.map(description => (
-                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj[this.string_parameterize(description)] } ]}>
+                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj[papel] } ]}>
                                     <Text style={styles.description}>{description}</Text>
                                 </View>
                             ))

@@ -11,10 +11,10 @@ import styles from './styles';
 Mapbox.setAccessToken('pk.eyJ1IjoibWFyZG9jIiwiYSI6ImNqa2dzZGd6ZzUyZmkzcW1sZTFrOW1qb2MifQ.3RxRm6kVGjV7AYTE8iMTSg');
 
 const colorObj = {
-    papel: colors.danger,
-    plastico: colors.success,
-    vidro: colors.primary,
-    metal: colors.warning,
+    red: colors.danger,
+    green: colors.success,
+    blue: colors.primary,
+    orange: colors.warning,
 };
 
 export default class Map extends Component {
@@ -26,10 +26,6 @@ export default class Map extends Component {
         super(props);
         this._renderItem = this._renderItem.bind(this);
     }
-
-    string_parameterize = function (str1) {
-      return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-").replace(new RegExp('[áàâã]','gi'), 'a');
-  };
 
     state = {
       locations: [
@@ -61,7 +57,7 @@ export default class Map extends Component {
           longitude: -40.295269,
         },
       ],
-      isVisible: false
+      isVisible: true,
     }
 
     renderAnnotations() {
@@ -98,7 +94,7 @@ export default class Map extends Component {
                     <View style={styles.rowContainer}>
                         {
                             item.description.map(description => (
-                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj[this.string_parameterize(description)] } ]}>
+                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj.green } ]}>
                                     <Text style={styles.description}>{description}</Text>
                                 </View>
                             ))
@@ -107,28 +103,31 @@ export default class Map extends Component {
                 </View>
 
                 <View style={styles.routeContainer}>
-                  <Popup
-                      isVisible={this.state.isVisible}
-                      onCancelPressed={() => this.setState({ isVisible: false })}
-                      onAppPressed={() => this.setState({ isVisible: false })}
-                      onBackButtonPressed={() => this.setState({ isVisible: false })}
-                      options={{
-                        latitude: -20.3540692,
-                        longitude: -40.2996606,
-                        title: 'The White House',
-                        dialogTitle: 'This is the dialog Title',
-                        dialogMessage: 'This is the amazing dialog Message',
-                        cancelText: 'This is the cancel button text'
-                      }}
-                    />
-
-                    <TouchableHighlight underlayColor={colors.primary} style={styles.routeButton} onPress={() => { this.setState({ isVisible: true }) }}>
+                    <TouchableHighlight underlayColor={colors.primary} style={styles.routeButton} onPress={ this._renderPopup }>
                         <MaterialCommunityIcons name="directions" size={(Platform.OS === 'ios') ? 20 : 25} color={colors.white} />
                     </TouchableHighlight>
                 </View>
             </View>
         );
     }
+
+  _renderPopup = () => {
+    return (
+      <Popup
+        isVisible={this.state.isVisible}
+        onCancelPressed={() => this.setState({ isVisible: false })}
+        onAppPressed={() => this.setState({ isVisible: false })}
+        onBackButtonPressed={() => this.setState({ isVisible: false })}
+        modalProps={{ // you can put all react-native-modal props inside.
+            animationIn: 'slideInUp'
+        }}
+        appsWhiteList={{ /* Array of apps (apple-maps, google-maps, etc...) that you want
+        to show in the popup, if is undefined or an empty array it will show all supported apps installed on device.*/}}
+        options={{ /* See `showLocation` method above, this accepts the same options. */ }}
+        style={{ /* Optional: you can override default style by passing your values. */ }}
+      />
+    )
+  }
 
   render() {
     //[-40.2996606, -20.3540692]
@@ -154,7 +153,7 @@ export default class Map extends Component {
             styleURL={Mapbox.StyleURL.Street}
             zoomLevel={16}
             zoomEnabled={true}
-            scrollEnabled={true}
+            scrollEnabled={false}
             showUserLocation={true}
             attributionEnabled={(Platform.OS === 'ios') ? true : false}
             logoEnabled={false}

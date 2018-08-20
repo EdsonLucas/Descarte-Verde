@@ -28,7 +28,7 @@ export default class Map extends Component {
     }
 
     string_parameterize = function (str1) {
-      return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-").replace(new RegExp('[áàâã]','gi'), 'a');
+      return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
   };
 
     state = {
@@ -37,7 +37,7 @@ export default class Map extends Component {
           key: '1',
           title: 'PEV',
           subtitle: 'Prédio Azul - 1º andar',
-          description: ['Papel', 'Plástico', 'Vidro', 'Metal'],
+          description: ['Papel', 'Plastico', 'Vidro', 'Metal'],
           image: require('images/pev.jpg'),
           latitude: -20.3540692,
           longitude: -40.2996606,

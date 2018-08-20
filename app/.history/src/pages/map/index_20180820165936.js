@@ -12,7 +12,7 @@ Mapbox.setAccessToken('pk.eyJ1IjoibWFyZG9jIiwiYSI6ImNqa2dzZGd6ZzUyZmkzcW1sZTFrOW
 
 const colorObj = {
     papel: colors.danger,
-    plastico: colors.success,
+    plástico: colors.success,
     vidro: colors.primary,
     metal: colors.warning,
 };
@@ -28,7 +28,7 @@ export default class Map extends Component {
     }
 
     string_parameterize = function (str1) {
-      return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-").replace(new RegExp('[áàâã]','gi'), 'a');
+      return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
   };
 
     state = {

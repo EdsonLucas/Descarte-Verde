@@ -27,9 +27,9 @@ export default class Map extends Component {
         this._renderItem = this._renderItem.bind(this);
     }
 
-    string_parameterize = function (str1) {
-      return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-").replace(new RegExp('[áàâã]','gi'), 'a');
-  };
+    string_parameterize = (str1) => {
+      return str1.trim().toLowerCase().replace(/[ˆa-zA-Z0-9 -]/, "").replace(/\s/g, "-");
+    }
 
     state = {
       locations: [
@@ -98,7 +98,7 @@ export default class Map extends Component {
                     <View style={styles.rowContainer}>
                         {
                             item.description.map(description => (
-                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj[this.string_parameterize(description)] } ]}>
+                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj[string_parameterize(description)] } ]}>
                                     <Text style={styles.description}>{description}</Text>
                                 </View>
                             ))

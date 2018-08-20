@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     },
 
     contextText2: {
-        paddingLeft: metrics.basePadding / 2,
+        paddingLeft: metrics.basePadding / 3,
     },
 
     infoTitle: {

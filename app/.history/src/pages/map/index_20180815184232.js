@@ -11,10 +11,10 @@ import styles from './styles';
 Mapbox.setAccessToken('pk.eyJ1IjoibWFyZG9jIiwiYSI6ImNqa2dzZGd6ZzUyZmkzcW1sZTFrOW1qb2MifQ.3RxRm6kVGjV7AYTE8iMTSg');
 
 const colorObj = {
-    papel: colors.danger,
-    plastico: colors.success,
-    vidro: colors.primary,
-    metal: colors.warning,
+    red: colors.danger,
+    green: colors.success,
+    blue: colors.primary,
+    orange: colors.warning,
 };
 
 export default class Map extends Component {
@@ -26,10 +26,6 @@ export default class Map extends Component {
         super(props);
         this._renderItem = this._renderItem.bind(this);
     }
-
-    string_parameterize = function (str1) {
-      return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-").replace(new RegExp('[áàâã]','gi'), 'a');
-  };
 
     state = {
       locations: [
@@ -98,7 +94,7 @@ export default class Map extends Component {
                     <View style={styles.rowContainer}>
                         {
                             item.description.map(description => (
-                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj[this.string_parameterize(description)] } ]}>
+                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj.green } ]}>
                                     <Text style={styles.description}>{description}</Text>
                                 </View>
                             ))
@@ -154,7 +150,7 @@ export default class Map extends Component {
             styleURL={Mapbox.StyleURL.Street}
             zoomLevel={16}
             zoomEnabled={true}
-            scrollEnabled={true}
+            scrollEnabled={false}
             showUserLocation={true}
             attributionEnabled={(Platform.OS === 'ios') ? true : false}
             logoEnabled={false}
