@@ -59,33 +59,26 @@ const styles = StyleSheet.create({
     },
 
     contextText2: {
-        paddingLeft: 0,
+        paddingLeft: metrics.basePadding / 3,
     },
 
     infoTitle: {
-        flexDirection: 'column',
+        flexDirection: 'row',
     },
 
     itemTitle: {
         ...general.title,
     },
 
-    itemSubTitle: {
+    subTitle: {
       ...general.text,
       color: colors.regular,
-      fontWeight: '600',
-      paddingTop: 10,
-    },
-
-    hr: {
-      marginTop: 10,
-      borderBottomWidth: 1,
-      borderBottomColor: '#EEEEEE'
-    },
+      paddingBottom: 10,
+    }
 
     infoContainer: {
         flexDirection: 'row',
-        marginTop: metrics.baseMargin / 2
+        marginTop: metrics.baseMargin
     },
 
     info: {
@@ -95,6 +88,11 @@ const styles = StyleSheet.create({
     infoText: {
         ...general.text,
         marginLeft: metrics.baseMargin / 2,
+    },
+
+    hr: {
+      borderBottomWidth: 1,
+      borderBottomColor: '#EEEEEE'
     },
 });
 

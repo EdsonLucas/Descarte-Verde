@@ -17,6 +17,20 @@ const colorObj = {
     metal: colors.warning,
 };
 
+String.prototype.normalize = function() {
+    var translate = { "à":"a", "á":"a", "â":"a", "ã":"a", "ä":"a", "å":"a", "æ":"a", "ç":"c", "è":"e", "é":"e",
+        "ê":"e", "ë":"e", "ì":"i", "í":"i", "î":"i", "ï":"i", "ð":"d", "ñ":"n", "ò" :"o", "ó":"o", "ô":"o", "õ":"o", "ö":"o",
+        "ø":"o", "ù":"u", "ú":"u", "û":"u", "ü":"u", "ý":"y", "þ":"b", "ß" :"s", "à":"a", "á":"a", "â":"a", "ã":"a", "ä":"a",
+        "å":"a", "æ":"a", "ç":"c", "è":"e", "é":"e", "ê":"e", "ë" :"e", "ì":"i", "í":"i", "î":"i", "ï":"i", "ð":"d", "ñ":"n",
+        "ò":"o", "ó":"o", "ô":"o", "õ":"o", "ö":"o", "ø" :"o", "ù":"u", "ú":"u", "û":"u", "ý":"y", "ý":"y", "þ":"b", "ÿ":"y",
+        "ŕ":"r", "ŕ":"r"
+    },
+    translate_re = /[àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŕŕ]/gim;
+    return ( this.replace( translate_re, function( match ){
+        return translate[ match ];
+    }) );
+};
+
 export default class Map extends Component {
     static navigationOptions = {
         header: null,
@@ -28,7 +42,7 @@ export default class Map extends Component {
     }
 
     string_parameterize = function (str1) {
-      return str1.trim().toLowerCase().replace("á", "a");
+      return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
   };
 
     state = {
@@ -77,7 +91,7 @@ export default class Map extends Component {
             <View style={styles.annotationContainer}>
                 <View style={styles.annotationFill} />
             </View>
-            <Mapbox.Callout title={location.title} />
+            <Mapbox.Callout title='Look! An annotation!' />
             </Mapbox.PointAnnotation>
             )
         )
@@ -98,7 +112,7 @@ export default class Map extends Component {
                     <View style={styles.rowContainer}>
                         {
                             item.description.map(description => (
-                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj[this.string_parameterize(description)] } ]}>
+                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj[this.string_parameterize(description).normalize()] } ]}>
                                     <Text style={styles.description}>{description}</Text>
                                 </View>
                             ))
@@ -152,7 +166,6 @@ export default class Map extends Component {
 
             <Mapbox.MapView
             styleURL={Mapbox.StyleURL.Street}
-            animated={true}
             zoomLevel={16}
             zoomEnabled={true}
             scrollEnabled={true}

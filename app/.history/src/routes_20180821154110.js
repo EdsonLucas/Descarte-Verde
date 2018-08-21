@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import { StackNavigator, TabNavigator } from 'react-navigation';
+import { StackNavigator, TabNavigator, withNavigationFocus } from 'react-navigation';
 import { colors, metrics } from 'styles';
 
 import Welcome from 'pages/welcome';
@@ -19,12 +19,12 @@ const createNavigator = (isFirstUse = true) =>
             Produtos: { screen: Produtos },
             Pontos: { screen: Pontos },
             Sobre: { screen: Sobre },
-        },
-          {
+        }, {
             tabBarPosition: 'bottom',
             tabBarOptions: {
                 showIcon: true,
                 animationEnabled: true,
+                showLabel: ({props.isFocused}) ? true : false,
                 upperCaseLabel: false,
                 activeTintColor: colors.main2,
                 inactiveTintColor: colors.regular,

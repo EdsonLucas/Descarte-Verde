@@ -19,7 +19,15 @@ const createNavigator = (isFirstUse = true) =>
             Produtos: { screen: Produtos },
             Pontos: { screen: Pontos },
             Sobre: { screen: Sobre },
-        },
+        }, {
+            navigationOptions: ({ navigation, focused }) => {
+                const { routeName } = navigation.state;
+                if (routeName === 'Home') {
+                  return { showLabel: false }
+                }
+                return
+            },
+          },
           {
             tabBarPosition: 'bottom',
             tabBarOptions: {

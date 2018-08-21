@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     textContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: metrics.basePadding,
+        paddingHorizontal: metrics.basePadding / 5,
     },
 
     title: {

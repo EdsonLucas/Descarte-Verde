@@ -3,7 +3,7 @@ import { View, ScrollView, Text, Platform, StatusBar } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 import LinearGradient from 'react-native-linear-gradient';
 import { MaterialCommunityIcons } from 'icons';
-import { metrics, colors } from 'styles';
+import { colors } from 'styles';
 import styles from './styles';
 
 const cards = [
@@ -14,7 +14,6 @@ const cards = [
       contentTitle: 'Materiais Descartáveis:',
       contentText: 'Jornais e Revistas \n\n Listas Telefônicas \n\n Papel Sulfite \n\n Papel de Fax \n\n Folhas de Caderno',
       contentText2: 'Formulários \n\n Caixas em Geral \n\n Fotocópias \n\n Envelopes \n\n Cartazes',
-      padding: 0,
       border: colors.primary,
   },
   {
@@ -24,7 +23,6 @@ const cards = [
       contentTitle: 'Materiais Descartáveis:',
       contentText: 'Copos \n\n Sacos/Sacolas \n\n Frascos \n\n Tampas',
       contentText2: 'Potes \n\n Canos PVC \n\n Tubos PVC \n\n Garrafas Pet',
-      padding: metrics.basePadding,
       border: colors.danger,
   },
   {
@@ -34,7 +32,6 @@ const cards = [
       contentTitle: 'Materiais Descartáveis:',
       contentText: 'Garrafas \n\n Potes \n\n Embalagens',
       contentText2: 'Frascos \n\n Copos \n\n Para-brisas',
-      padding: metrics.basePadding,
       border: colors.success,
   },
   {
@@ -44,7 +41,6 @@ const cards = [
     contentTitle: 'Materiais Descartáveis:',
     contentText: 'Tampas \n\n Latas \n\n Panelas sem cabo \n\n Ferragens \n\n Arames',
     contentText2: 'Chapas \n\n Canos \n\n Pregos \n\n Parafusos \n\n Ferramentas',
-    padding: metrics.basePadding,
     border: colors.warning,
   },
   {
@@ -54,7 +50,6 @@ const cards = [
     contentTitle: 'Materiais Descartáveis:',
     contentText: 'Tampas',
     contentText2: 'Tubo',
-    padding: metrics.basePadding * 3,
     border: '#bf9957',
   },
 ];
@@ -73,9 +68,9 @@ export default class Produtos extends Component {
             <View style={[styles.cardContainer, { borderLeftColor: cards.border, zIndex: 5 }]} key={cards.key}>
                 <View style={styles.infoTitle}>
                     <Text style={styles.itemTitle}>{cards.title}</Text>
-                    <View style={styles.hr}></View>
                     <Text style={styles.itemSubTitle}>Processo de descarte:</Text>
                 </View>
+                <View style={styles.hr}></View>
                 <View style={styles.infoContainer}>
                     <Text style={styles.info}>{cards.text}</Text>
                 </View>
@@ -98,7 +93,7 @@ export default class Produtos extends Component {
                 <View style={styles.contextText}>
                     <Text style={styles.infoText}>{cards.contentText}</Text>
                 </View>
-                <View style={[styles.contextText2, { paddingRight: cards.padding}]}>
+                <View style={styles.contextText2}>
                     <Text style={styles.infoText}>{cards.contentText2}</Text>
                 </View>
             </View>

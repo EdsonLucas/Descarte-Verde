@@ -21,6 +21,15 @@ const createNavigator = (isFirstUse = true) =>
             Sobre: { screen: Sobre },
         },
           {
+            navigationOptions: ({ navigation }) => {
+              tabBarOptions: ({focused}) => {
+                const { routeName } = navigation.state;
+                if (focused) {
+                  return { showLabel: false }
+                }
+                return
+              }
+            },
             tabBarPosition: 'bottom',
             tabBarOptions: {
                 showIcon: true,

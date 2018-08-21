@@ -77,7 +77,7 @@ export default class Map extends Component {
             <View style={styles.annotationContainer}>
                 <View style={styles.annotationFill} />
             </View>
-            <Mapbox.Callout title={location.title} />
+            <Mapbox.Callout title='Look! An annotation!' />
             </Mapbox.PointAnnotation>
             )
         )
@@ -152,7 +152,6 @@ export default class Map extends Component {
 
             <Mapbox.MapView
             styleURL={Mapbox.StyleURL.Street}
-            animated={true}
             zoomLevel={16}
             zoomEnabled={true}
             scrollEnabled={true}

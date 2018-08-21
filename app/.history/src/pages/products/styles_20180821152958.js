@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     },
 
     contextText2: {
-        paddingLeft: 0,
+        paddingLeft: metrics.basePadding / 3,
     },
 
     infoTitle: {
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
 
     infoContainer: {
         flexDirection: 'row',
-        marginTop: metrics.baseMargin / 2
+        marginTop: metrics.baseMargin
     },
 
     info: {

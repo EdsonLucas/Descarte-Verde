@@ -19,12 +19,22 @@ const createNavigator = (isFirstUse = true) =>
             Produtos: { screen: Produtos },
             Pontos: { screen: Pontos },
             Sobre: { screen: Sobre },
-        },
-          {
+        }, {
             tabBarPosition: 'bottom',
             tabBarOptions: {
+                navigationOptions: ({ navigation }) => ({
+                  tabBarIcon: ({ focused }) => {
+                    const { routeName } = navigation.state;
+                    if (routeName === 'Home') {
+                      iconName = showLabel: false
+                    }
+
+                    return iconName;
+                  }
+                }),
                 showIcon: true,
                 animationEnabled: true,
+                showLabel: true,
                 upperCaseLabel: false,
                 activeTintColor: colors.main2,
                 inactiveTintColor: colors.regular,

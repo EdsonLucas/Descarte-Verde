@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     contextContainer: {
         ...general.box,
         flexDirection: 'row',
-        marginHorizontal: metrics.basePadding * 2,
+        marginHorizontal: metrics.basePadding * 4,
         marginTop: -5,
     },
 

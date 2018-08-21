@@ -44,7 +44,7 @@ const createNavigator = (isFirstUse = true) =>
     },
     Map: { screen: Map },
     }, {
-      initialRouteName: isFirstUse ? "Welcome" : "Home",
+      initialRouteName: isFirstUse ? "Welcome" : "Sobre",
   });
 
 export default createNavigator;

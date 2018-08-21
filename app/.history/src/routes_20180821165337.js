@@ -19,8 +19,7 @@ const createNavigator = (isFirstUse = true) =>
             Produtos: { screen: Produtos },
             Pontos: { screen: Pontos },
             Sobre: { screen: Sobre },
-        },
-          {
+        }, {
             tabBarPosition: 'bottom',
             tabBarOptions: {
                 showIcon: true,

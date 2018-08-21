@@ -19,10 +19,19 @@ const createNavigator = (isFirstUse = true) =>
             Produtos: { screen: Produtos },
             Pontos: { screen: Pontos },
             Sobre: { screen: Sobre },
-        },
-          {
+        }, {
             tabBarPosition: 'bottom',
             tabBarOptions: {
+                navigationOptions: ({ navigation }) => ({
+                  tabBarIcon: ({ focused }) => {
+                    const { routeName } = navigation.state;
+                    if (focused) {
+                      iconName = { showLabel: false }
+                    }
+
+                    return iconName;
+                  }
+                }),
                 showIcon: true,
                 animationEnabled: true,
                 upperCaseLabel: false,

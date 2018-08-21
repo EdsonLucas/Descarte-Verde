@@ -19,12 +19,15 @@ const createNavigator = (isFirstUse = true) =>
             Produtos: { screen: Produtos },
             Pontos: { screen: Pontos },
             Sobre: { screen: Sobre },
-        },
-          {
+        }, {
             tabBarPosition: 'bottom',
             tabBarOptions: {
                 showIcon: true,
+                    iconStyle: {
+                      paddingBottom: 10,
+                    },
                 animationEnabled: true,
+                showLabel: true,
                 upperCaseLabel: false,
                 activeTintColor: colors.main2,
                 inactiveTintColor: colors.regular,

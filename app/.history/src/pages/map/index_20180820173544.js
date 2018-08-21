@@ -17,6 +17,19 @@ const colorObj = {
     metal: colors.warning,
 };
 
+String.prototype.normalize = function () {
+  var from = "àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŕŕ";
+  var to = "aaaaaaaceeeeiiiidnoooooouuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyrr";
+  var value = this;
+
+  for (var i = 0; i < from.length; i++) {
+    char_re = new RegExp(from.charAt(i), "gim");
+    value = value.replace(char_re, to.charAt(i))
+  };
+
+  return value;
+};
+
 export default class Map extends Component {
     static navigationOptions = {
         header: null,
@@ -28,7 +41,8 @@ export default class Map extends Component {
     }
 
     string_parameterize = function (str1) {
-      return str1.trim().toLowerCase().replace("á", "a");
+      const teste = str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-").normalize();
+      console.error.teste
   };
 
     state = {
@@ -77,7 +91,7 @@ export default class Map extends Component {
             <View style={styles.annotationContainer}>
                 <View style={styles.annotationFill} />
             </View>
-            <Mapbox.Callout title={location.title} />
+            <Mapbox.Callout title='Look! An annotation!' />
             </Mapbox.PointAnnotation>
             )
         )
@@ -152,7 +166,6 @@ export default class Map extends Component {
 
             <Mapbox.MapView
             styleURL={Mapbox.StyleURL.Street}
-            animated={true}
             zoomLevel={16}
             zoomEnabled={true}
             scrollEnabled={true}

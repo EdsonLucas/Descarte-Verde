@@ -77,7 +77,7 @@ export default class Map extends Component {
             <View style={styles.annotationContainer}>
                 <View style={styles.annotationFill} />
             </View>
-            <Mapbox.Callout title={location.title} />
+            <Mapbox.Callout title='Look! An annotation!' />
             </Mapbox.PointAnnotation>
             )
         )

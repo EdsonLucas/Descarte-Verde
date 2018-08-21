@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     },
 
     contextText2: {
-        paddingLeft: 0,
+        paddingLeft: metrics.basePadding / 3,
     },
 
     infoTitle: {
@@ -74,18 +74,17 @@ const styles = StyleSheet.create({
       ...general.text,
       color: colors.regular,
       fontWeight: '600',
-      paddingTop: 10,
+      paddingBottom: 10,
     },
 
     hr: {
-      marginTop: 10,
       borderBottomWidth: 1,
       borderBottomColor: '#EEEEEE'
     },
 
     infoContainer: {
         flexDirection: 'row',
-        marginTop: metrics.baseMargin / 2
+        marginTop: metrics.baseMargin
     },
 
     info: {

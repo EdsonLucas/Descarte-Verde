@@ -34,7 +34,7 @@ const Sobre = () => (
           </View>
 
           <View style={styles.cardContainer}>
-              <Text style={[styles.description, styles.textContainer]}>
+              <Text style={styles.description}>
                   O Descarte Verde foi desenvolvido por alunos da UVV (Universidade de Vila Velha), com integrantes de cursos de Sistemas de Informação, Markerting, Engenharia e Psicologia.
               </Text>
           </View>

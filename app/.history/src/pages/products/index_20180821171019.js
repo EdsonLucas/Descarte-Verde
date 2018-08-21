@@ -54,7 +54,7 @@ const cards = [
     contentTitle: 'Materiais Descartáveis:',
     contentText: 'Tampas',
     contentText2: 'Tubo',
-    padding: metrics.basePadding * 3,
+    padding: metrics.basePadding,
     border: '#bf9957',
   },
 ];

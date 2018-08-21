@@ -14,7 +14,7 @@ const cards = [
       contentTitle: 'Materiais Descartáveis:',
       contentText: 'Jornais e Revistas \n\n Listas Telefônicas \n\n Papel Sulfite \n\n Papel de Fax \n\n Folhas de Caderno',
       contentText2: 'Formulários \n\n Caixas em Geral \n\n Fotocópias \n\n Envelopes \n\n Cartazes',
-      padding: 0,
+      padding: metrics.basePadding,
       border: colors.primary,
   },
   {
@@ -24,7 +24,7 @@ const cards = [
       contentTitle: 'Materiais Descartáveis:',
       contentText: 'Copos \n\n Sacos/Sacolas \n\n Frascos \n\n Tampas',
       contentText2: 'Potes \n\n Canos PVC \n\n Tubos PVC \n\n Garrafas Pet',
-      padding: metrics.basePadding,
+      padding: metrics.basePadding * 2,
       border: colors.danger,
   },
   {
@@ -54,7 +54,7 @@ const cards = [
     contentTitle: 'Materiais Descartáveis:',
     contentText: 'Tampas',
     contentText2: 'Tubo',
-    padding: metrics.basePadding * 3,
+    padding: metrics.basePadding,
     border: '#bf9957',
   },
 ];

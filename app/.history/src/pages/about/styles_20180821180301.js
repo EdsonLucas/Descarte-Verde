@@ -35,12 +35,14 @@ const styles = StyleSheet.create({
     cardContainer: {
         marginHorizontal: metrics.baseMargin * 2,
         marginVertical: metrics.baseMargin,
+        backgroundColor: 'red',
     },
 
     textContainer: {
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: metrics.basePadding,
+        paddingHorizontal: metrics.basePadding / 5,
     },
 
     title: {
