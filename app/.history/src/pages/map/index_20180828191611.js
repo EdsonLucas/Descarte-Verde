@@ -120,16 +120,16 @@ export default class Map extends Component {
                       onAppPressed={() => this.setState({ isVisible: false })}
                       onBackButtonPressed={() => this.setState({ isVisible: false })}
                       options={{
-                        latitude: result.latitude,
-                        longitude: result.longitude,
-                        title: result.title,
+                        latitude: this.state.locations.latitude,
+                        longitude: this.state.locations.longitude,
+                        title: this.state.locations.title,
                         dialogTitle: 'This is the dialog Title',
                         dialogMessage: 'This is the amazing dialog Message',
                         cancelText: 'This is the cancel button text'
                       }}
                     />
 
-                    <TouchableHighlight underlayColor={colors.primary} style={styles.routeButton} onPress={() => { this.setState({ isVisible: true }) }}>
+                    <TouchableHighlight underlayColor={colors.primary} style={styles.routeButton} onPress={() => { this.setState({ isVisible: true }) }>
                         <MaterialCommunityIcons name="directions" size={(Platform.OS === 'ios') ? 20 : 25} color={colors.white} />
                     </TouchableHighlight>
                 </View>

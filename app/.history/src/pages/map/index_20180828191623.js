@@ -120,9 +120,9 @@ export default class Map extends Component {
                       onAppPressed={() => this.setState({ isVisible: false })}
                       onBackButtonPressed={() => this.setState({ isVisible: false })}
                       options={{
-                        latitude: result.latitude,
-                        longitude: result.longitude,
-                        title: result.title,
+                        latitude: this.state.locations.latitude,
+                        longitude: this.state.locations.longitude,
+                        title: this.state.locations.title,
                         dialogTitle: 'This is the dialog Title',
                         dialogMessage: 'This is the amazing dialog Message',
                         cancelText: 'This is the cancel button text'

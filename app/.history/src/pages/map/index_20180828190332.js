@@ -58,6 +58,20 @@ export default class Map extends Component {
     })
   }
 
+  // async onUserLocationUpdate(location) {
+  //   await this.setState({ coords: location.coords });
+  //   this.centerMap();
+  // }
+
+  // centerMap() {
+  //   const { coords } = this.state;
+  //   if (coords) {
+  //     this._map.setCamera({
+  //       centerCoordinate: [coords.longitude, coords.latitude],
+  //     });
+  //   }
+  // }
+
     state = {
       locations: [],
       listLocation: [],
@@ -120,16 +134,16 @@ export default class Map extends Component {
                       onAppPressed={() => this.setState({ isVisible: false })}
                       onBackButtonPressed={() => this.setState({ isVisible: false })}
                       options={{
-                        latitude: result.latitude,
-                        longitude: result.longitude,
-                        title: result.title,
+                        latitude: this.state.locations.latitude,
+                        longitude: this.state.locations.longitude,
+                        title: this.state.locations.title,
                         dialogTitle: 'This is the dialog Title',
                         dialogMessage: 'This is the amazing dialog Message',
                         cancelText: 'This is the cancel button text'
                       }}
                     />
 
-                    <TouchableHighlight underlayColor={colors.primary} style={styles.routeButton} onPress={() => { this.setState({ isVisible: true }) }}>
+                    <TouchableHighlight underlayColor={colors.primary} style={styles.routeButton} onPress={() => this.centerMap()}>
                         <MaterialCommunityIcons name="directions" size={(Platform.OS === 'ios') ? 20 : 25} color={colors.white} />
                     </TouchableHighlight>
                 </View>
@@ -166,6 +180,7 @@ export default class Map extends Component {
             attributionEnabled={(Platform.OS === 'ios') ? true : false}
             logoEnabled={false}
             centerCoordinate={[parseFloat(coords.longitude), parseFloat(coords.latitude)]}
+            // onUpdateUserLocation={this.onUpdateUserLocation}
             style={styles.mapContainer}
             ref={(c) => this._map = c}
             >

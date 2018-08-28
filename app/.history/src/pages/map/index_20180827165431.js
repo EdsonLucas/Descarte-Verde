@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StatusBar, TouchableOpacity, TouchableHighlight, Text, Platform, Image, AsyncStorage } from 'react-native';
+import { View, StatusBar, TouchableOpacity, TouchableHighlight, Text, Platform, Image } from 'react-native';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
 import { MaterialCommunityIcons, Ionicons } from 'icons';
 import Carousel from 'react-native-snap-carousel';
@@ -8,7 +8,6 @@ import { Popup } from 'react-native-map-link';
 import { general, metrics, colors } from 'styles';
 import styles from './styles';
 import locations from 'assets/api/locations.json';
-import geolib from 'geolib';
 
 Mapbox.setAccessToken('pk.eyJ1IjoibWFyZG9jIiwiYSI6ImNqa2dzZGd6ZzUyZmkzcW1sZTFrOW1qb2MifQ.3RxRm6kVGjV7AYTE8iMTSg');
 
@@ -17,11 +16,6 @@ const colorObj = {
     plastico: colors.success,
     vidro: colors.primary,
     metal: colors.warning,
-    tubodecremedental: '#bf9957',
-};
-
-const imgPointer = {
-    pev: require('images/pev.jpg'),
 };
 
 export default class Map extends Component {
@@ -35,38 +29,40 @@ export default class Map extends Component {
     }
 
     string_parameterize = function (str1) {
-      return str1.trim().toLowerCase().replace(/\s/g,'').replace("á", "a");
+      return str1.trim().toLowerCase().replace("á", "a");
   };
 
-  async componentDidMount() {
-    this.getLocation();
-    const result = await AsyncStorage.getItem('@DescarteVerde:coords');
-    if(result) this.setState({ coords: JSON.parse(result) });
-      const simpleData = locations.data.reduce((prev, obj) => {
-        return Object.assign({}, prev,
-          { [obj.key]:  { latitude: obj.latitude, longitude: obj.longitude } }
-        );
-      }, {});
-    const temp = JSON.parse(result);
-    const listLocation = geolib.orderByDistance({ latitude: temp.latitude, longitude: temp.longitude}, simpleData);
-    this.setState({ listLocation: [...listLocation] });
-  }
-
-  getLocation = () => {
-    this.setState({
-      locations: locations.data
-    })
-  }
-
     state = {
-      locations: [],
-      listLocation: [],
-      isVisible: false,
-      firstItem: 0,
-      coords: {
-        latitude: -20.3543106,
-        longitude: -40.2992636,
-      }
+      locations: [
+        {
+          key: '1',
+          title: 'PEV',
+          subtitle: 'Prédio Azul - 1º andar',
+          description: ['Papel', 'Plástico', 'Vidro', 'Metal'],
+          image: require('images/pev.jpg'),
+          latitude: -20.3540692,
+          longitude: -40.2996606,
+        },
+        {
+          key: '2',
+          title: 'Comércio',
+          subtitle: 'Prédio de Direito - 2º andar',
+          description: ['Papel', 'Plástico', 'Vidro', 'Metal'],
+          image: require('images/cooperativa.jpg'),
+          latitude: -20.3555145,
+          longitude: -40.2992553,
+        },
+        {
+          key: '3',
+          title: 'Cooperativa',
+          subtitle: '',
+          description: ['Papel', 'Plástico', 'Vidro', 'Metal'],
+          image: require('images/comercio.jpg'),
+          latitude: -20.334076,
+          longitude: -40.295269,
+        },
+      ],
+      isVisible: false
     }
 
     renderAnnotations() {
@@ -74,7 +70,7 @@ export default class Map extends Component {
         this.state.locations.map(location => (
             <Mapbox.PointAnnotation
                 key={location.key}
-                id={location.key}
+                id={location.title}
                 coordinate={[parseFloat(location.longitude), parseFloat(location.latitude)]}
             >
                 {/* <Image source={require('images/marker.png')} style={{ flex: 1, resizeMode: 'contain', width: 30, height: 30 }}
@@ -91,21 +87,19 @@ export default class Map extends Component {
 
 
     _renderItem ({item, index}) {
-        const result = this.state.locations.find(l => l.key === item.key);
-
         return (
-            <View key={result.key} style={styles.cardContainer} >
+            <View key={item.key} style={styles.cardContainer} >
                 <View style={styles.imageContainer}>
-                    <ResponsiveImage style={{ resizeMode: 'stretch' }} borderRadius={3} source={ imgPointer[result.image] } initWidth={(Platform.OS === 'android') ? 120 : 100} initHeight={210} />
+                    <ResponsiveImage style={{ resizeMode: 'stretch' }} borderRadius={3} source={ item.image } initWidth={(Platform.OS === 'android') ? 120 : 100} initHeight={210} />
                 </View>
                 <View style={styles.subContainer}>
-                    <Text style={styles.title}>{result.title}</Text>
-                    <Text style={styles.subTitle}>{result.subtitle}</Text>
+                    <Text style={styles.title}>{item.title}</Text>
+                    <Text style={styles.subTitle}>{item.subtitle}</Text>
 
                     <View style={styles.rowContainer}>
                         {
-                            result.description.map(description => (
-                                <View key={result.key} style={[styles.descriptionContainer, { backgroundColor: colorObj[this.string_parameterize(description)] } ]}>
+                            item.description.map(description => (
+                                <View key={item.key} style={[styles.descriptionContainer, { backgroundColor: colorObj[this.string_parameterize(description)] } ]}>
                                     <Text style={styles.description}>{description}</Text>
                                 </View>
                             ))
@@ -120,9 +114,9 @@ export default class Map extends Component {
                       onAppPressed={() => this.setState({ isVisible: false })}
                       onBackButtonPressed={() => this.setState({ isVisible: false })}
                       options={{
-                        latitude: result.latitude,
-                        longitude: result.longitude,
-                        title: result.title,
+                        latitude: -20.3540692,
+                        longitude: -40.2996606,
+                        title: 'The White House',
                         dialogTitle: 'This is the dialog Title',
                         dialogMessage: 'This is the amazing dialog Message',
                         cancelText: 'This is the cancel button text'
@@ -138,7 +132,8 @@ export default class Map extends Component {
     }
 
   render() {
-    const { coords } = this.state;
+    //[-40.2996606, -20.3540692]
+    const { latitude, longitude } = this.state.locations;
 
     return (
         <View style={styles.container}>
@@ -165,7 +160,7 @@ export default class Map extends Component {
             showUserLocation={true}
             attributionEnabled={(Platform.OS === 'ios') ? true : false}
             logoEnabled={false}
-            centerCoordinate={[parseFloat(coords.longitude), parseFloat(coords.latitude)]}
+            centerCoordinate={[longitude, latitude]}
             style={styles.mapContainer}
             ref={(c) => this._map = c}
             >
@@ -175,7 +170,7 @@ export default class Map extends Component {
             </Mapbox.MapView>
 
             <Carousel
-            data={this.state.listLocation}
+            data={this.state.locations}
             layout={'default'}
             loop={true}
             renderItem={this._renderItem}
@@ -183,7 +178,7 @@ export default class Map extends Component {
             itemWidth={metrics.screenWidth - 90}
             slideStyle={styles.placeContainer}
             onSnapToItem={(index) => {
-                const { latitude, longitude } = this.state.listLocation[index];
+                const { latitude, longitude } = this.state.locations[index];
 
                 this._map.flyTo([longitude, latitude], 1500);
 
