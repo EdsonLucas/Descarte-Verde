@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StatusBar, TouchableOpacity, TouchableHighlight, Text, Platform, Image, AsyncStorage } from 'react-native';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
-import { Ionicons } from 'icons';
+import { MaterialCommunityIcons, Ionicons } from 'icons';
 import Carousel from 'react-native-snap-carousel';
 import ResponsiveImage from 'react-native-responsive-image';
 import { Popup } from 'react-native-map-link';
@@ -55,6 +55,8 @@ export default class Map extends Component {
       }, {});
     const temp = JSON.parse(result);
     const listLocation = geolib.orderByDistance({ latitude: temp.latitude, longitude: temp.longitude}, simpleData);
+    const speedLocation = geolib.getSpeed({ latitude: temp.latitude, longitude: temp.longitude, unit: 'min'});
+    console.error(speedLocation);
     this.setState({ listLocation: [...listLocation] });
   }
 
@@ -92,7 +94,7 @@ export default class Map extends Component {
             <View style={styles.annotationContainer}>
                 <View style={styles.annotationFill} />
             </View>
-            <Mapbox.Callout title={location.title} snippet={location.subTitle} />
+            <Mapbox.Callout title={location.title} />
             </Mapbox.PointAnnotation>
             )
         )
@@ -120,14 +122,7 @@ export default class Map extends Component {
                                 </View>
                             ))
                         }
-                    </View>
-                    <View style={styles.distanceContainer}>
-
-                        <View style={styles.distanceIcon}>
-                            <Ionicons name="ios-walk" size={(Platform.OS === 'ios') ? 20 : 23} color={colors.white} />
-                        </View>
-
-                        <Text style={styles.distanceTitle}>{distance} metros</Text>
+                        <Text>{distance} metros</Text>
                     </View>
                 </View>
             </View>

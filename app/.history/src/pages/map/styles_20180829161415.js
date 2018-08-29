@@ -79,17 +79,16 @@ const styles = StyleSheet.create({
 
   subContainer: {
     flex: 1,
+    alignItems: 'flex-start',
     padding: metrics.basePadding,
   },
 
   title: {
     ...general.title,
-    alignItems: 'flex-start',
     paddingBottom: metrics.basePadding / 10,
   },
 
   subTitle: {
-    alignItems: 'flex-start',
     marginBottom: metrics.baseMargin,
   },
 
@@ -115,20 +114,17 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-end',
     marginTop: metrics.baseMargin,
   },
 
   distanceIcon: {
     backgroundColor: colors.main2,
-    paddingVertical: (Platform.OS === 'ios') ? 3 : 2,
+    paddingVertical: (Platform.OS === 'ios') ? 5 : 4,
     paddingHorizontal: (Platform.OS === 'ios') ? 10 : 9,
-    borderRadius: metrics.baseRadius,
   },
 
   distanceTitle: {
-    ...general.title,
-    fontSize: 12,
+    ...general.text,
     marginLeft: 10,
   },
 });

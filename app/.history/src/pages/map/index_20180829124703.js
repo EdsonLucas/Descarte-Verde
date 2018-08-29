@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { View, StatusBar, TouchableOpacity, TouchableHighlight, Text, Platform, Image, AsyncStorage } from 'react-native';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
-import { Ionicons } from 'icons';
+import { MaterialCommunityIcons, Ionicons } from 'icons';
 import Carousel from 'react-native-snap-carousel';
 import ResponsiveImage from 'react-native-responsive-image';
 import { Popup } from 'react-native-map-link';
 import { general, metrics, colors } from 'styles';
 import styles from './styles';
-import materialLocations from 'assets/api/materialLocations.json';
-import toothpasteLocations from 'assets/api/toothpasteLocations.json';
+import locations from 'assets/api/locations.json';
+import locations2 from 'assets/api/locations2.json';
 import geolib from 'geolib';
 
 Mapbox.setAccessToken('pk.eyJ1IjoibWFyZG9jIiwiYSI6ImNqa2dzZGd6ZzUyZmkzcW1sZTFrOW1qb2MifQ.3RxRm6kVGjV7AYTE8iMTSg');
@@ -25,11 +25,6 @@ const imgPointer = {
     pev: require('images/pev.jpg'),
 };
 
-const places = {
-  'materialLocations': materialLocations,
-  'toothpasteLocations': toothpasteLocations,
-}
-
 export default class Map extends Component {
     static navigationOptions = {
         header: null,
@@ -45,10 +40,10 @@ export default class Map extends Component {
   };
 
   async componentDidMount() {
-    await this.getLocation();
+    this.getLocation();
     const result = await AsyncStorage.getItem('@DescarteVerde:coords');
     if(result) this.setState({ coords: JSON.parse(result) });
-      const simpleData = this.state.locations.reduce((prev, obj) => {
+      const simpleData = locations.data.reduce((prev, obj) => {
         return Object.assign({}, prev,
           { [obj.key]:  { latitude: obj.latitude, longitude: obj.longitude } }
         );
@@ -58,13 +53,13 @@ export default class Map extends Component {
     this.setState({ listLocation: [...listLocation] });
   }
 
-  async getLocation() {
+  getLocation = () => {
     const { params } = this.props.navigation.state;
 
     const file = params.file
 
-    await this.setState({
-      locations: places[file].data
+    this.setState({
+      locations: eval(file).data
     })
   }
 
@@ -92,7 +87,7 @@ export default class Map extends Component {
             <View style={styles.annotationContainer}>
                 <View style={styles.annotationFill} />
             </View>
-            <Mapbox.Callout title={location.title} snippet={location.subTitle} />
+            <Mapbox.Callout title={location.title} />
             </Mapbox.PointAnnotation>
             )
         )
@@ -102,7 +97,7 @@ export default class Map extends Component {
 
     _renderItem ({item, index}) {
         const result = this.state.locations.find(l => l.key === item.key);
-        const distance = geolib.convertUnit('m', item.distance, 2)
+
         return (
             <View key={result.key} style={styles.cardContainer} >
                 <View style={styles.imageContainer}>
@@ -121,14 +116,27 @@ export default class Map extends Component {
                             ))
                         }
                     </View>
-                    <View style={styles.distanceContainer}>
+                </View>
 
-                        <View style={styles.distanceIcon}>
-                            <Ionicons name="ios-walk" size={(Platform.OS === 'ios') ? 20 : 23} color={colors.white} />
-                        </View>
+                <View style={styles.routeContainer}>
+                  <Popup
+                      isVisible={this.state.isVisible}
+                      onCancelPressed={() => this.setState({ isVisible: false })}
+                      onAppPressed={() => this.setState({ isVisible: false })}
+                      onBackButtonPressed={() => this.setState({ isVisible: false })}
+                      options={{
+                        latitude: result.latitude,
+                        longitude: result.longitude,
+                        title: result.title,
+                        dialogTitle: 'This is the dialog Title',
+                        dialogMessage: 'This is the amazing dialog Message',
+                        cancelText: 'This is the cancel button text'
+                      }}
+                    />
 
-                        <Text style={styles.distanceTitle}>{distance} metros</Text>
-                    </View>
+                    <TouchableHighlight underlayColor={colors.primary} style={styles.routeButton} onPress={() => { this.setState({ isVisible: true }) }}>
+                        <MaterialCommunityIcons name="directions" size={(Platform.OS === 'ios') ? 20 : 25} color={colors.white} />
+                    </TouchableHighlight>
                 </View>
             </View>
         );
@@ -174,7 +182,7 @@ export default class Map extends Component {
             <Carousel
             data={this.state.listLocation}
             layout={'default'}
-            loop={false}
+            loop={true}
             renderItem={this._renderItem}
             sliderWidth={metrics.screenWidth}
             itemWidth={metrics.screenWidth - 90}

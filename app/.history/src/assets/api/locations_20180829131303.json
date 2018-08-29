@@ -1,0 +1,31 @@
+{
+  "data": [
+        {
+        "key": "1",
+        "title": "PEV",
+        "subtitle": "Prédio Azul - 1º andar",
+        "description": ["Tubo de Creme Dental"],
+        "image": ["pev"],
+        "latitude": -20.354315,
+        "longitude": -40.299859
+    },
+    {
+        "key": "1",
+        "title": "PEV",
+        "subtitle": "Na lateral da Unidade Acadêmica II",
+        "description": ["Papel", "Plástico", "Vidro", "Metal"],
+        "image": ["pev"],
+        "latitude": -20.353467,
+        "longitude": -40.298585
+    },
+    {
+        "key": "2",
+        "title": "PEV",
+        "subtitle": "Em frente a biblioteca",
+        "description": ["Papel", "Plástico", "Vidro", "Metal"],
+        "image": ["pev"],
+        "latitude": -20.354339,
+        "longitude": -40.299191
+    }
+  ]
+}

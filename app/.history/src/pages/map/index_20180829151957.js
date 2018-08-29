@@ -92,7 +92,7 @@ export default class Map extends Component {
             <View style={styles.annotationContainer}>
                 <View style={styles.annotationFill} />
             </View>
-            <Mapbox.Callout title={location.title} snippet={location.subTitle} />
+            <Mapbox.Callout title={location.title} />
             </Mapbox.PointAnnotation>
             )
         )
@@ -120,14 +120,14 @@ export default class Map extends Component {
                                 </View>
                             ))
                         }
-                    </View>
-                    <View style={styles.distanceContainer}>
+                        <View style={styles.distanceContainer}>
 
-                        <View style={styles.distanceIcon}>
-                            <Ionicons name="ios-walk" size={(Platform.OS === 'ios') ? 20 : 23} color={colors.white} />
+                            <View style={styles.distanceIcon}>
+                                <Ionicons name="ios-walk" size={(Platform.OS === 'ios') ? 20 : 25} color={colors.white} />
+                            </View>
+
+                            <Text style={styles.distanceTitle}>{distance} metros</Text>
                         </View>
-
-                        <Text style={styles.distanceTitle}>{distance} metros</Text>
                     </View>
                 </View>
             </View>

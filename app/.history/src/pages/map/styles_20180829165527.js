@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     marginTop: metrics.baseMargin,
   },
 
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
 
   distanceTitle: {
     ...general.title,
-    fontSize: 12,
+    fontSize: 14,
     marginLeft: 10,
   },
 });

@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "key": "0",
+      "title": "PEV",
+      "subtitle": "Na lateral do Prédio Rosa",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353467,
+      "longitude": -40.298585
+    },
+    {
+      "key": "1",
+      "title": "PEV",
+      "subtitle": "Em frente a biblioteca",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354339,
+      "longitude": -40.299191
+    }
+  ]
+}

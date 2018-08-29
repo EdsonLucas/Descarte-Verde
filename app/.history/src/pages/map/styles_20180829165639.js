@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
 
   distanceTitle: {
     ...general.title,
-    fontSize: 12,
+    fontSize: 14,
     marginLeft: 10,
   },
 });

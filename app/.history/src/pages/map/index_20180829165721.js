@@ -124,7 +124,7 @@ export default class Map extends Component {
                     <View style={styles.distanceContainer}>
 
                         <View style={styles.distanceIcon}>
-                            <Ionicons name="ios-walk" size={(Platform.OS === 'ios') ? 20 : 23} color={colors.white} />
+                            <Ionicons name="ios-walk" size={(Platform.OS === 'ios') ? 20 : 20} color={colors.white} />
                         </View>
 
                         <Text style={styles.distanceTitle}>{distance} metros</Text>

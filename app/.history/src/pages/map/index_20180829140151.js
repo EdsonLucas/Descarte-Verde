@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StatusBar, TouchableOpacity, TouchableHighlight, Text, Platform, Image, AsyncStorage } from 'react-native';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
-import { Ionicons } from 'icons';
+import { MaterialCommunityIcons, Ionicons } from 'icons';
 import Carousel from 'react-native-snap-carousel';
 import ResponsiveImage from 'react-native-responsive-image';
 import { Popup } from 'react-native-map-link';
@@ -26,8 +26,8 @@ const imgPointer = {
 };
 
 const places = {
-  'materialLocations': materialLocations,
-  'toothpasteLocations': toothpasteLocations,
+  'locations': locations,
+  'locations2': locations2,
 }
 
 export default class Map extends Component {
@@ -92,7 +92,7 @@ export default class Map extends Component {
             <View style={styles.annotationContainer}>
                 <View style={styles.annotationFill} />
             </View>
-            <Mapbox.Callout title={location.title} snippet={location.subTitle} />
+            <Mapbox.Callout title={location.title} />
             </Mapbox.PointAnnotation>
             )
         )
@@ -120,15 +120,29 @@ export default class Map extends Component {
                                 </View>
                             ))
                         }
+                        <Text>{distance} metros</Text>
                     </View>
-                    <View style={styles.distanceContainer}>
+                </View>
 
-                        <View style={styles.distanceIcon}>
-                            <Ionicons name="ios-walk" size={(Platform.OS === 'ios') ? 20 : 23} color={colors.white} />
-                        </View>
+                <View style={styles.routeContainer}>
+                  <Popup
+                      isVisible={this.state.isVisible}
+                      onCancelPressed={() => this.setState({ isVisible: false })}
+                      onAppPressed={() => this.setState({ isVisible: false })}
+                      onBackButtonPressed={() => this.setState({ isVisible: false })}
+                      options={{
+                        latitude: result.latitude,
+                        longitude: result.longitude,
+                        title: result.title,
+                        dialogTitle: 'This is the dialog Title',
+                        dialogMessage: 'This is the amazing dialog Message',
+                        cancelText: 'This is the cancel button text'
+                      }}
+                    />
 
-                        <Text style={styles.distanceTitle}>{distance} metros</Text>
-                    </View>
+                    <TouchableHighlight underlayColor={colors.primary} style={styles.routeButton} onPress={() => { this.setState({ isVisible: true }) }}>
+                        <MaterialCommunityIcons name="directions" size={(Platform.OS === 'ios') ? 20 : 25} color={colors.white} />
+                    </TouchableHighlight>
                 </View>
             </View>
         );
