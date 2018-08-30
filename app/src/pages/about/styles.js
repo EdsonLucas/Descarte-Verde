@@ -51,8 +51,7 @@ const styles = StyleSheet.create({
     },
 
     description: {
-        fontSize: 14,
-        fontFamily: 'Roboto-Light',
+        ...general.text,
         color: colors.white,
     },
 

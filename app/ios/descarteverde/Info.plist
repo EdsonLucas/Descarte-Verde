@@ -93,5 +93,7 @@
       <string>yandexnavi</string>
       <string>moovit</string>
   </array>
+  <key>MGLMapboxMetricsEnabledSettingShownInApp</key>
+  <string>YES</string>
 </dict>
 </plist>

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { View, StatusBar, TouchableOpacity, TouchableHighlight, Text, Platform, Image, AsyncStorage } from 'react-native';
+import { View, StatusBar, TouchableOpacity, Text, Platform, AsyncStorage } from 'react-native';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
 import { Ionicons } from 'icons';
 import Carousel from 'react-native-snap-carousel';
 import ResponsiveImage from 'react-native-responsive-image';
-import { Popup } from 'react-native-map-link';
-import { general, metrics, colors } from 'styles';
-import styles from './styles';
+import geolib from 'geolib';
 import materialLocations from 'assets/api/materialLocations.json';
 import toothpasteLocations from 'assets/api/toothpasteLocations.json';
-import geolib from 'geolib';
+import { metrics, colors } from 'styles';
+import styles from './styles';
 
 Mapbox.setAccessToken('pk.eyJ1IjoibWFyZG9jIiwiYSI6ImNqa2dzZGd6ZzUyZmkzcW1sZTFrOW1qb2MifQ.3RxRm6kVGjV7AYTE8iMTSg');
 
@@ -87,8 +86,7 @@ export default class Map extends Component {
                 id={location.key}
                 coordinate={[parseFloat(location.longitude), parseFloat(location.latitude)]}
             >
-                {/* <Image source={require('images/marker.png')} style={{ flex: 1, resizeMode: 'contain', width: 30, height: 30 }}
-                /> */}
+
             <View style={styles.annotationContainer}>
                 <View style={styles.annotationFill} />
             </View>
@@ -141,15 +139,12 @@ export default class Map extends Component {
         <View style={styles.container}>
             <StatusBar barStyle={(Platform.OS === 'ios') ? 'dark-content' : 'light-content'} />
             <View style={styles.topoContainer}>
-                {
-                    Platform.OS === 'ios' &&
-                    <TouchableOpacity
-                        style={{flex: 0.2, alignItems: 'center', justifyContent: 'center'}}
-                        onPress={() => this.props.navigation.goBack()}
-                        >
-                        <Ionicons name="ios-arrow-back" size={35} color={colors.text} />
-                    </TouchableOpacity>
-                }
+                  <TouchableOpacity
+                      style={{flex: 0.2, alignItems: 'center', justifyContent: 'center'}}
+                      onPress={() => this.props.navigation.goBack()}
+                      >
+                      <Ionicons name="ios-arrow-back" size={35} color={colors.text} />
+                  </TouchableOpacity>
                 <Text style={styles.topoTitle}>Pontos de Descarte</Text>
             </View>
 
@@ -160,7 +155,7 @@ export default class Map extends Component {
             zoomEnabled={true}
             scrollEnabled={true}
             showUserLocation={true}
-            attributionEnabled={(Platform.OS === 'ios') ? true : false}
+            attributionEnabled={false}
             logoEnabled={false}
             centerCoordinate={[parseFloat(coords.longitude), parseFloat(coords.latitude)]}
             style={styles.mapContainer}
@@ -174,7 +169,6 @@ export default class Map extends Component {
             <Carousel
             data={this.state.listLocation}
             layout={'default'}
-            loop={false}
             renderItem={this._renderItem}
             sliderWidth={metrics.screenWidth}
             itemWidth={metrics.screenWidth - 90}
