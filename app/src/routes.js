@@ -36,6 +36,8 @@ const createNavigator = (isFirstUse = true) =>
                     marginTop: 0,
                 },
                 style: {
+                    borderTopWidth: 1,
+                    borderTopColor: colors.lighter,
                     backgroundColor: colors.white,
                     height: (Platform.OS === 'ios') ? 45 : 45,
                 },

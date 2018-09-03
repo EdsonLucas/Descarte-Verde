@@ -32,24 +32,6 @@ const styles = StyleSheet.create({
     color: colors.text,
   },
 
-  annotationContainer: {
-    flex: 1,
-    width: 30,
-    height: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 15,
-    backgroundColor: colors.main2,
-    borderTopStartRadius: 50,
-    borderTopRightRadius: 50,
-    borderTopLeftRadius: 50,
-    transform: [
-      {
-        rotate: '-45deg',
-      }
-    ]
-  },
-
   placeContainer: {
     flex: 1,
     paddingHorizontal: metrics.basePadding,
@@ -115,7 +97,7 @@ const styles = StyleSheet.create({
   },
 
   distanceContainer: {
-    flex: 1,
+    flex: (Platform.OS === 'android') ? 1 : 0,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',

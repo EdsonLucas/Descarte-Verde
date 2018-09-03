@@ -64,7 +64,7 @@ export default class Produtos extends Component {
     static navigationOptions = {
         header: null,
         swipeEnabled: false,
-        tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="recycle" size={(Platform.OS === 'ios') ? 18 : 24} color={tintColor} />
+        tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="recycle" size={(Platform.OS === 'ios') ? 22 : 24} color={tintColor} />
     }
 
     _renderHeader(cards, index, isActive) {

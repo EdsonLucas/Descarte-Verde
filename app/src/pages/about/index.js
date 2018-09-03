@@ -45,7 +45,7 @@ const Sobre = () => (
 Sobre.navigationOptions = {
     header: null,
     swipeEnabled: false,
-    tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="menu" size={(Platform.OS === 'ios') ? 18 : 24} color={tintColor} />
+    tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="menu" size={(Platform.OS === 'ios') ? 22 : 24} color={tintColor} />
 }
 
 export default Sobre;

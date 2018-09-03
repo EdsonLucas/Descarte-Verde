@@ -90,9 +90,6 @@ export default class Map extends Component {
 
             <ResponsiveImage source={require('images/marker.png')} style={{ flex: 1, resizeMode: 'contain' }} initWidth={30} initHeight={30} />
 
-            {/* <View style={styles.annotationContainer}>
-                <MaterialCommunityIcons name="recycle" size={(Platform.OS === 'ios') ? 18 : 19} color={colors.white} />
-            </View> */}
             <Mapbox.Callout title={location.subtitle} />
             </Mapbox.PointAnnotation>
             )
@@ -107,7 +104,7 @@ export default class Map extends Component {
         return (
             <View key={result.key} style={styles.cardContainer} >
                 <View style={styles.imageContainer}>
-                    <ResponsiveImage style={{ resizeMode: 'stretch' }} borderRadius={3} source={ imgPointer[result.image] } initWidth={120} initHeight={210} />
+                    <ResponsiveImage style={{ resizeMode: 'stretch' }} borderRadius={3} source={ imgPointer[result.image] } initWidth={120} initHeight={(Platform.OS === 'android') ? 210 : 225} />
                 </View>
                 <View style={styles.subContainer}>
                     <Text style={styles.title}>{result.title}</Text>
@@ -125,7 +122,7 @@ export default class Map extends Component {
                     <View style={styles.distanceContainer}>
 
                         <View style={styles.distanceIcon}>
-                            <Ionicons name="ios-walk" size={(Platform.OS === 'ios') ? 20 : 23} color={colors.white} />
+                            <Ionicons name="ios-walk" size={(Platform.OS === 'ios') ? 22 : 23} color={colors.white} />
                         </View>
 
                         <Text style={styles.distanceTitle}>{distance} metros</Text>
@@ -140,7 +137,7 @@ export default class Map extends Component {
 
     return (
         <View style={styles.container}>
-            <StatusBar barStyledefault="dark-content" backgroundColor="#eee" />
+            <StatusBar barStyle="dark-content" backgroundColor="#eee" />
             <View style={styles.topoContainer}>
                   <TouchableOpacity
                       style={{flex: 0.3, alignItems: 'center', justifyContent: 'center'}}
