@@ -3,6 +3,7 @@ import createNavigator from 'routes';
 import 'config';
 import Permissions from 'react-native-permissions'
 import TimerMixin from 'react-timer-mixin';
+import requestPermissions from 'utils/location-service.js';
 import { AsyncStorage, YellowBox } from 'react-native'
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated'])
 

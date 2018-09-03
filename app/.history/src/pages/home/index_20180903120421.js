@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StatusBar, Platform, ImageBackground } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import ResponsiveImage from 'react-native-responsive-image';
 import { MaterialCommunityIcons } from 'icons';
 import { metrics } from 'styles';
-import { requestPermissions } from 'utils/location-service.js';
+import requestPermissions from 'utils/location-service.js';
 import styles from './styles';
 
 class Home extends Component {
@@ -14,8 +15,7 @@ class Home extends Component {
     };
 
     async componentDidMount() {
-      const navigation = this.props;
-      await requestPermissions(navigation);
+      await requestPermissions(this.props.navigation.bind(this));
     }
 
     render() {

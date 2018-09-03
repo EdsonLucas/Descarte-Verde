@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StatusBar, Platform, ImageBackground } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import ResponsiveImage from 'react-native-responsive-image';
 import { MaterialCommunityIcons } from 'icons';
 import { metrics } from 'styles';

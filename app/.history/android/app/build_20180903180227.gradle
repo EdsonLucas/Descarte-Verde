@@ -148,7 +148,6 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-android-location-services-dialog-box')
     compile project(':mapbox-react-native-mapbox-gl')
     compile project(':react-native-vector-icons')
     compile project(':react-native-linear-gradient')

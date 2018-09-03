@@ -28,7 +28,7 @@
     "react-native-snap-carousel": "^3.7.2",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "1.5.2",
-    "react-timer-mixin": "^0.13.4"
+    "react-timer-mixin": "^0.13.4",
   },
   "devDependencies": {
     "babel-jest": "23.4.2",
