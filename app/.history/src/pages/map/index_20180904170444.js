@@ -7,7 +7,8 @@ import ResponsiveImage from 'react-native-responsive-image';
 import geolib from 'geolib';
 import TimerMixin from 'react-timer-mixin';
 import Permissions from 'react-native-permissions';
-import { Bubbles } from 'react-native-loader';
+import { Bars } from 'react-native-loader';
+import Loader from 'react-native-mask-loader';
 import materialLocations from 'assets/api/materialLocations.json';
 import toothpasteLocations from 'assets/api/toothpasteLocations.json';
 import { metrics, colors } from 'styles';
@@ -226,10 +227,11 @@ export default class Map extends Component {
             />
             </View>
             :
-            <View style={{flex: 1, position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, backgroundColor: colors.main2, justifyContent: 'center', alignItems: 'center'}}>
-              <ResponsiveImage style={{resizeMode: 'stretch', marginBottom: metrics.baseMargin}}  source={require('images/logo-white.png')} initWidth={321} initHeight={63} />
-              <Bubbles size={10} color={colors.white} style={styles.loading} />
-            </View>
+            <Loader
+              isLoaded={!loading}
+              imageSource={require('images/logo-white.png')}
+              backgroundStyle={styles.loadingBackgroundStyle}
+            />
         }
       </View>
 

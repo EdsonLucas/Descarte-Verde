@@ -4,7 +4,7 @@ import Carousel from 'react-native-snap-carousel';
 import LinearGradient from 'react-native-linear-gradient';
 import { MaterialCommunityIcons } from 'icons';
 import styles from './styles';
-import { metrics } from 'styles';
+import { colors, metrics } from 'styles';
 
 const points = [
     {

@@ -5,9 +5,6 @@ import { Ionicons } from 'icons';
 import Carousel from 'react-native-snap-carousel';
 import ResponsiveImage from 'react-native-responsive-image';
 import geolib from 'geolib';
-import TimerMixin from 'react-timer-mixin';
-import Permissions from 'react-native-permissions';
-import { Bubbles } from 'react-native-loader';
 import materialLocations from 'assets/api/materialLocations.json';
 import toothpasteLocations from 'assets/api/toothpasteLocations.json';
 import { metrics, colors } from 'styles';
@@ -59,43 +56,34 @@ export default class Map extends Component {
     };
 
     async componentDidMount() {
-      const result = await AsyncStorage.getItem('@DescarteVerde:coords');
-      if(result) this.loadingPosition();
       const intervalId = TimerMixin.setInterval(this.getCurrentPosition, 10000);
-      this.setState({
-        intervalId
-      });
     }
 
-    getCurrentPosition = async () => {
-      const {
-        intervalId
-      } = this.state;
-      Permissions.check('location').then((response) => {
-        if (response === 'authorized') {
-          clearInterval(intervalId);
-          this.watchId = navigator.geolocation.watchPosition(
-            (position) => {
-              AsyncStorage.setItem('@DescarteVerde:coords', JSON.stringify(position.coords));
-              this.loadingPosition();
+  getCurrentPosition = async () => {
+    const {
+      intervalId
+    } = this.state;
+    Permissions.check('location').then((response) => {
+      if (response === 'authorized') {
+        clearInterval(intervalId);
+        this.watchId = navigator.geolocation.watchPosition(
+          (position) => {
+            AsyncStorage.setItem('@DescarteVerde:coords', JSON.stringify(position.coords));
+          }, (error) => {
+            if (error.code === 1) console.log('enable gps');
+          }, {
+            enableHighAccuacy: false,
+            timeout: 2000,
+            maxiumAge: 0,
+            distanceFilter: 1,
+          },
+        );
+      }
+    });
+  }
 
-            }, (error) => {
-              if (error.code === 1) console.log('enable gps');
-
-            }, {
-              enableHighAccuacy: false,
-              timeout: 2000,
-              maxiumAge: 0,
-              distanceFilter: 1,
-            },
-          );
-        }
-      });
-    }
-
-    async loadingPosition() {
+    async componentDidMount() {
       await this.getLocation();
-      await this.setState({ loading: false });
       const result = await AsyncStorage.getItem('@DescarteVerde:coords');
         if(result) this.setState({ coords: JSON.parse(result) });
         const simpleData = this.state.locations.reduce((prev, obj) => {
@@ -173,14 +161,10 @@ export default class Map extends Component {
     }
 
   render() {
-    const { coords, loading } = this.state;
+    const { coords } = this.state;
 
     return (
-
         <View style={styles.container}>
-          {
-            !loading ?
-            <View>
             <StatusBar barStyle="dark-content" backgroundColor="#eee" />
             <View style={styles.topoContainer}>
                   <TouchableOpacity
@@ -224,15 +208,7 @@ export default class Map extends Component {
 
                 }}
             />
-            </View>
-            :
-            <View style={{flex: 1, position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, backgroundColor: colors.main2, justifyContent: 'center', alignItems: 'center'}}>
-              <ResponsiveImage style={{resizeMode: 'stretch', marginBottom: metrics.baseMargin}}  source={require('images/logo-white.png')} initWidth={321} initHeight={63} />
-              <Bubbles size={10} color={colors.white} style={styles.loading} />
-            </View>
-        }
       </View>
-
     );
   }
 }

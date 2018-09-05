@@ -198,6 +198,7 @@ export default class Map extends Component {
             zoomLevel={16}
             zoomEnabled={true}
             scrollEnabled={true}
+            snippet={true}
             showUserLocation={true}
             attributionEnabled={false}
             logoEnabled={false}

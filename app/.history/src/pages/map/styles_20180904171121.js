@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
+    backgroundColor: colors.main2,
   },
 
   mapContainer: {
@@ -15,15 +16,6 @@ const styles = StyleSheet.create({
     bottom:0,
     left: 0,
     right: 0,
-  },
-
-  annotationContainer: {
-    width: 30,
-    height: 30,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "white",
-    borderRadius: 15,
   },
 
   topoContainer: {

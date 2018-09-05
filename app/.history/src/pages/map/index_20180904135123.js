@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StatusBar, TouchableOpacity, Text, Platform, AsyncStorage } from 'react-native';
+import { View, StatusBar, TouchableOpacity, Text, Platform, AsyncStorage, ActivityIndicator } from 'react-native';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
 import { Ionicons } from 'icons';
 import Carousel from 'react-native-snap-carousel';
@@ -7,7 +7,6 @@ import ResponsiveImage from 'react-native-responsive-image';
 import geolib from 'geolib';
 import TimerMixin from 'react-timer-mixin';
 import Permissions from 'react-native-permissions';
-import { Bubbles } from 'react-native-loader';
 import materialLocations from 'assets/api/materialLocations.json';
 import toothpasteLocations from 'assets/api/toothpasteLocations.json';
 import { metrics, colors } from 'styles';
@@ -59,39 +58,37 @@ export default class Map extends Component {
     };
 
     async componentDidMount() {
-      const result = await AsyncStorage.getItem('@DescarteVerde:coords');
-      if(result) this.loadingPosition();
-      const intervalId = TimerMixin.setInterval(this.getCurrentPosition, 10000);
+      const intervalId = TimerMixin.setInterval(this.getCurrentPosition, 100);
       this.setState({
         intervalId
       });
     }
 
-    getCurrentPosition = async () => {
-      const {
-        intervalId
-      } = this.state;
-      Permissions.check('location').then((response) => {
-        if (response === 'authorized') {
-          clearInterval(intervalId);
-          this.watchId = navigator.geolocation.watchPosition(
-            (position) => {
-              AsyncStorage.setItem('@DescarteVerde:coords', JSON.stringify(position.coords));
-              this.loadingPosition();
+  getCurrentPosition = async () => {
+    const {
+      intervalId
+    } = this.state;
+    Permissions.check('location').then((response) => {
+      if (response === 'authorized') {
+        clearInterval(intervalId);
+        this.watchId = navigator.geolocation.watchPosition(
+          (position) => {
+            AsyncStorage.setItem('@DescarteVerde:coords', JSON.stringify(position.coords));
+            this.loadingPosition();
 
-            }, (error) => {
-              if (error.code === 1) console.log('enable gps');
+          }, (error) => {
+            if (error.code === 1) console.log('enable gps');
 
-            }, {
-              enableHighAccuacy: false,
-              timeout: 2000,
-              maxiumAge: 0,
-              distanceFilter: 1,
-            },
-          );
-        }
-      });
-    }
+          }, {
+            enableHighAccuacy: false,
+            timeout: 2000,
+            maxiumAge: 0,
+            distanceFilter: 1,
+          },
+        );
+      }
+    });
+  }
 
     async loadingPosition() {
       await this.getLocation();
@@ -178,9 +175,6 @@ export default class Map extends Component {
     return (
 
         <View style={styles.container}>
-          {
-            !loading ?
-            <View>
             <StatusBar barStyle="dark-content" backgroundColor="#eee" />
             <View style={styles.topoContainer}>
                   <TouchableOpacity
@@ -191,7 +185,9 @@ export default class Map extends Component {
                   </TouchableOpacity>
                 <Text style={[styles.topoTitle, { marginRight: 30}]}>Pontos de Descarte</Text>
             </View>
-
+          {
+            !loading ?
+            <View>
             <Mapbox.MapView
             styleURL={Mapbox.StyleURL.Street}
             animated={true}
@@ -226,10 +222,7 @@ export default class Map extends Component {
             />
             </View>
             :
-            <View style={{flex: 1, position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, backgroundColor: colors.main2, justifyContent: 'center', alignItems: 'center'}}>
-              <ResponsiveImage style={{resizeMode: 'stretch', marginBottom: metrics.baseMargin}}  source={require('images/logo-white.png')} initWidth={321} initHeight={63} />
-              <Bubbles size={10} color={colors.white} style={styles.loading} />
-            </View>
+            <ActivityIndicator size="large" color="#0000ff" />
         }
       </View>
 

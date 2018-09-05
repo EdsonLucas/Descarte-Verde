@@ -126,6 +126,7 @@ export default class Map extends Component {
                 id={location.key}
                 title={location.subtitle}
                 coordinate={[parseFloat(location.longitude), parseFloat(location.latitude)]}
+                snippet={true}
             >
 
             <ResponsiveImage source={require('images/marker.png')} style={{ flex: 1, resizeMode: 'contain' }} initWidth={30} initHeight={30} />

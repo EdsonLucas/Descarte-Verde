@@ -130,7 +130,7 @@ export default class Map extends Component {
 
             <ResponsiveImage source={require('images/marker.png')} style={{ flex: 1, resizeMode: 'contain' }} initWidth={30} initHeight={30} />
 
-            <Mapbox.Callout title={location.subtitle} />
+            <Mapbox.Callout title={location.subtitle} style={styles.annotationContainer} />
             </Mapbox.PointAnnotation>
             )
         )

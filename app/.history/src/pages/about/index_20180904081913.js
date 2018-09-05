@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Platform, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, Platform, StatusBar } from 'react-native';
 import ResponsiveImage from 'react-native-responsive-image';
-import { MaterialCommunityIcons } from 'icons';
+import { MaterialCommunityIcons, Ionicons } from 'icons';
 import styles from './styles';
-import { colors } from 'styles';
+import { general, colors, metrics } from 'styles';
 
 
 const Sobre = () => (

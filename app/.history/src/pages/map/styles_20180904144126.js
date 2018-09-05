@@ -17,15 +17,6 @@ const styles = StyleSheet.create({
     right: 0,
   },
 
-  annotationContainer: {
-    width: 30,
-    height: 30,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "white",
-    borderRadius: 15,
-  },
-
   topoContainer: {
     ...general.topoContainer,
     flexDirection: 'row',
