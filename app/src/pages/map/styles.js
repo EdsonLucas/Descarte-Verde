@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginTop: 0,
     paddingTop: (Platform.OS === 'ios') ? 24 : 0,
-    marginBottom: metrics.baseMargin * 30,
+    marginBottom: metrics.screenHeight - 150,
   },
 
   topoTitle: {
@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
   },
 
   distanceIcon: {
+    width: 29,
     backgroundColor: colors.main2,
     paddingVertical: 2,
     paddingHorizontal: 9,

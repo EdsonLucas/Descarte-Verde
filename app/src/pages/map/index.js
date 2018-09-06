@@ -61,7 +61,7 @@ export default class Map extends Component {
     async componentDidMount() {
       const result = await AsyncStorage.getItem('@DescarteVerde:coords');
       if(result) this.loadingPosition();
-      const intervalId = TimerMixin.setInterval(this.getCurrentPosition, 10000);
+      const intervalId = TimerMixin.setInterval(this.getCurrentPosition, 100);
       this.setState({
         intervalId
       });
@@ -83,7 +83,7 @@ export default class Map extends Component {
               if (error.code === 1) console.log('enable gps');
 
             }, {
-              enableHighAccuacy: false,
+              enableHighAccuracy: false,
               timeout: 2000,
               maxiumAge: 0,
               distanceFilter: 1,
@@ -236,6 +236,7 @@ export default class Map extends Component {
             data={this.state.listLocation}
             layout={'default'}
             renderItem={this._renderItem}
+            loop={false}
             sliderWidth={metrics.screenWidth}
             itemWidth={metrics.screenWidth - 80}
             slideStyle={styles.placeContainer}
