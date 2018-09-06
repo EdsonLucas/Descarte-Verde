@@ -3,7 +3,7 @@
     {
       "key": "0",
       "title": "PEV",
-      "subtitle": "Prédio Azul - 1º andar",
+      "subtitle": "No 1º andar do Prédio Azul, próximo a coordenação",
       "description": ["Tubo de \nCreme Dental"],
       "image": ["pev"],
       "latitude": -20.354332,
@@ -12,7 +12,7 @@
     {
       "key": "1",
       "title": "PEV",
-      "subtitle": "Prédio Branco - 1º andar",
+      "subtitle": "No 1º andar do Prédio Branco, próximo a coordenação",
       "description": ["Tubo de \nCreme Dental"],
       "image": ["pev"],
       "latitude": -20.355156,
@@ -21,7 +21,7 @@
     {
       "key": "2",
       "title": "PEV",
-      "subtitle": "Prédio Rosa - 1º andar",
+      "subtitle": "No 1º andar Prédio Rosa, próximo a coordenação",
       "description": ["Tubo de \nCreme Dental"],
       "image": ["pev"],
       "latitude": -20.353398,

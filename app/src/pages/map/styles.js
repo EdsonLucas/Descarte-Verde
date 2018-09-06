@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-end',
-    alignItems: 'center',
+    alignItems: 'flex-end',
   },
 
   mapContainer: {
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginTop: 0,
     paddingTop: (Platform.OS === 'ios') ? 24 : 0,
-    marginBottom: (Platform.OS === 'ios') ? metrics.baseMargin * 30 : metrics.baseMargin * 33,
+    marginBottom: metrics.baseMargin * 30,
   },
 
   topoTitle: {
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
   },
 
   subTitle: {
+    fontSize: 12,
     alignItems: 'flex-start',
     marginBottom: metrics.baseMargin,
   },
@@ -115,8 +116,8 @@ const styles = StyleSheet.create({
 
   distanceIcon: {
     backgroundColor: colors.main2,
-    paddingVertical: (Platform.OS === 'ios') ? 2 : 2,
-    paddingHorizontal: (Platform.OS === 'ios') ? 9 : 9,
+    paddingVertical: 2,
+    paddingHorizontal: 9,
     borderRadius: metrics.baseRadius,
   },
 
@@ -125,13 +126,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginLeft: 10,
   },
-
-  loading: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'red'
-  }
 });
 
 export default styles;

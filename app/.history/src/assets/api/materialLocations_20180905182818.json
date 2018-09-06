@@ -1,0 +1,564 @@
+{
+  "data": [
+    {
+      "key": "0",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Na portaria C (Em frente à Unidade Acadêmica II)",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353286,
+      "longitude": -40.298632
+    },
+    {
+      "key": "1",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Perto da portaria C, em frente à escada",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353553,
+      "longitude": -40.298550
+    },
+    {
+      "key": "2",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Ao lado da Prédio Rosa, perto da escada",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353659,
+      "longitude": -40.298660
+    },
+    {
+      "key": "3",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Perto da entrada da Unidade Academica II",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353437,
+      "longitude": -40.298812
+    },
+    {
+      "key": "4",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Perto do Centro de Vivências, ao lado da escada",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353160,
+      "longitude": -40.299142
+    },
+    {
+      "key": "5",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Perto da lanchonete Naturallis do Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353639,
+      "longitude": -40.299502
+    },
+    {
+      "key": "6",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Perto do Prédio Rosa, embaixo das árvores",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353639,
+      "longitude": -40.298897
+    },
+    {
+      "key": "7",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Perto do Prédio Rosa, de frente ao Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353635,
+      "longitude": -40.299093
+    },
+    {
+      "key": "8",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Próximo ao ginásio GIMNICAS",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353714,
+      "longitude": -40.299273
+    },
+    {
+      "key": "9",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Ao lado do ginásio GIMNICAS",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353842,
+      "longitude":  -40.299341
+    },
+    {
+      "key": "10",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Ao lado do ginásio GIMNICAS, próximo ao Prédio Azul",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354017,
+      "longitude": -40.299586
+    },
+    {
+      "key": "11",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente ao Prédio Azul",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354134,
+      "longitude": -40.299819
+    },
+    {
+      "key": "12",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Próximo ao Cineteatro",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353948,
+      "longitude": -40.299911
+    },
+    {
+      "key": "13",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "1º, 2º e 3º andar da Unidade Acadêmica III",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354248,
+      "longitude":  -40.299902
+    },
+    {
+      "key": "14",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "1º, 2º e 3º andar da Unidade Acadêmica III",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354101,
+      "longitude": -40.300000
+    },
+    {
+      "key": "15",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "1º, 2º e 3º andar da Unidade Acadêmica III",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354054,
+      "longitude":  -40.300040
+    },
+    {
+      "key": "16",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Próximo ao Prédio Azul",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354325,
+      "longitude": -40.299583
+    },
+    {
+      "key": "17",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Próximo ao Prédio Azul e à Biblioteca",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354201,
+      "longitude":  -40.299376
+    },
+    {
+      "key": "18",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente à Biblioteca",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354331,
+      "longitude": -40.299251
+    },
+    {
+      "key": "19",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Esquina da Biblioteca, próximo ao INOTEC",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354435,
+      "longitude":  -40.299388
+    },
+    {
+      "key": "20",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente ao INOTEC",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354489,
+      "longitude": -40.299442
+    },
+    {
+      "key": "21",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente ao Almoxarifado",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355146,
+      "longitude":  -40.299400
+    },
+    {
+      "key": "22",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Na lanchonete Café com Pão",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355108,
+      "longitude": -40.299174
+    },
+    {
+      "key": "23",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Na lanchonete Café com Pão",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355108,
+      "longitude":  -40.299147
+    },
+    {
+      "key": "24",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente à Pró-reitoria",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354880,
+      "longitude": -40.298988
+    },
+    {
+      "key": "25",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Próximo à Supricopy, perto do Prédio Branco",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354967,
+      "longitude":  -40.298880
+    },
+    {
+      "key": "26",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Próximo à Supricopy, perto do Prédio Branco",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354992,
+      "longitude": -40.298918
+    },
+    {
+      "key": "27",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Próximo à Supricopy, perto do Prédio Branco",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355052,
+      "longitude":  -40.298934
+    },
+    {
+      "key": "28",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Perto do Prédio Branco, em frente a escada",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355089,
+      "longitude": -40.298987
+    },
+    {
+      "key": "29",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Esquina com o Prédio Branco, próximo às lanchonetes",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355301,
+      "longitude":  -40.299253
+    },
+    {
+      "key": "30",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Esquina com o Prédio Branco, próximo à Supricopy",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354916,
+      "longitude": -40.298651
+    },
+    {
+      "key": "31",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Esquina com a Prédio Branco, próximo ao estacionamento",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355417,
+      "longitude":  -40.299171
+    },
+    {
+      "key": "32",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Ao lado da escada do Prédio Branco",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355183,
+      "longitude":  -40.298825
+    },
+    {
+      "key": "33",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente ao NUPRAJUR, próximo ao Anfiteatro",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355149,
+      "longitude":  -40.298700
+    },
+    {
+      "key": "34",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente a escada do Prédio Branco",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355371,
+      "longitude":  -40.298699
+    },
+    {
+      "key": "35",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente à portaria B",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355407,
+      "longitude":  -40.298610
+    },
+    {
+      "key": "36",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente à portaria B",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355485,
+      "longitude":  -40.298614
+    },
+    {
+      "key": "37",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente à portaria B",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355507,
+      "longitude": -40.298555
+    },
+    {
+      "key": "38",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente à portaria B",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.355539,
+      "longitude":  -40.298536
+    },
+    {
+      "key": "39",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Em frente à Biblioteca",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354283,
+      "longitude":  -40.299194
+    },
+    {
+      "key": "40",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Próximo à Biblioteca",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.354216,
+      "longitude":  -40.299015
+    },
+    {
+      "key": "41",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Embaixo da árvore próxima à bandeira",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353893,
+      "longitude":  -40.298996
+    },
+    {
+      "key": "42",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Próximo à bandeira",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353924,
+      "longitude": -40.299119
+    },
+    {
+      "key": "43",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353258,
+      "longitude":  -40.299379
+    },
+    {
+      "key": "44",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353216,
+      "longitude": -40.299312
+    },
+    {
+      "key": "45",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353179,
+      "longitude":  -40.299230
+    },
+    {
+      "key": "46",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353150,
+      "longitude":  -40.299173
+    },
+    {
+      "key": "47",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353364,
+      "longitude":  -40.299499
+    },
+    {
+      "key": "48",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353321,
+      "longitude":  -40.299442
+    },
+    {
+      "key": "49",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353118,
+      "longitude":  -40.299269
+    },
+    {
+      "key": "50",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353161,
+      "longitude":  -40.299344
+    },
+    {
+      "key": "51",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353225,
+      "longitude":  -40.299444
+    },
+    {
+      "key": "52",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Centro de Vivências",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353272,
+      "longitude":  -40.299506
+    },
+    {
+      "key": "53",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Prédio Rosa, em frente aos laboratórios",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353266,
+      "longitude":-40.298772
+    },
+    {
+      "key": "54",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "No Prédio Rosa, próximo aos laboratórios",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353323,
+      "longitude":  -40.298777
+    },
+    {
+      "key": "55",
+      "selected": false,
+      "title": "PEV",
+      "subtitle": "Na Prédio Rosa, próximo à escada",
+      "description": ["Papel", "Plástico", "Vidro", "Metal"],
+      "image": ["pev"],
+      "latitude": -20.353386,
+      "longitude":  -40.298770
+    }
+  ]
+}
