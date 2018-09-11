@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StatusBar, Platform, ImageBackground } from 'react-native';
 import ResponsiveImage from 'react-native-responsive-image';
-import { MaterialCommunityIcons } from 'icons';
+import { Entypo } from 'icons';
 import { metrics } from 'styles';
 import { requestPermissions } from 'utils/location-service.js';
 import styles from './styles';
@@ -10,7 +10,7 @@ class Home extends Component {
     static navigationOptions = {
         header: null,
         swipeEnabled: false,
-        tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="home-outline" size={(Platform.OS === 'ios') ? 22 : 24} color={tintColor} />
+        tabBarIcon: ({ tintColor }) => <Entypo name="home" size={(Platform.OS === 'ios') ? 21 : 23} color={tintColor} />
     };
 
     async componentDidMount() {
@@ -35,7 +35,7 @@ class Home extends Component {
                 </Text>
 
                 <View style={styles.centerForm}>
-                  <ImageBackground style={[styles.imageBackground, {width: (Platform.OS === 'android') ? metrics.screenWidth / 1.13 : metrics.screenWidth / 1.14}]} source={require('images/plastico.jpg')}>
+                  <ImageBackground style={styles.imageBackground2} source={require('images/plastico.jpg')}>
                       <TouchableOpacity style={styles.button} onPress={ () => this.props.navigation.navigate('Map', { 'file': 'materialLocations' }) }>
                           <ResponsiveImage style={{resizeMode: 'stretch'}} source={require('images/plastic.png')} initWidth={40} initHeight={40} />
                           <Text style={styles.buttonText}>Plástico</Text>

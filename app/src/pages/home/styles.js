@@ -48,6 +48,12 @@ const styles = StyleSheet.create({
         marginTop: metrics.baseMargin,
     },
 
+    imageBackground2: {
+        flex: 1,
+        margin: metrics.baseMargin / 3,        
+        height: 105,
+    },
+
     imageBackground: {
         flex: 1,
         width: metrics.screenWidth,

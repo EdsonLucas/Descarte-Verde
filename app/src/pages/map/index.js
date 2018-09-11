@@ -74,7 +74,7 @@ export default class Map extends Component {
       Permissions.check('location').then((response) => {
         if (response === 'authorized') {
           clearInterval(intervalId);
-          this.watchId = navigator.geolocation.watchPosition(
+          this.watchId = navigator.geolocation.getCurrentPosition(
             (position) => {
               AsyncStorage.setItem('@DescarteVerde:coords', JSON.stringify(position.coords));
               this.loadingPosition();
@@ -166,7 +166,7 @@ export default class Map extends Component {
         return (
             <View key={result.key} style={styles.cardContainer} >
                 <View style={styles.imageContainer}>
-                    <ResponsiveImage style={{ resizeMode: 'stretch' }} borderRadius={3} source={ imgPointer[result.image] } initWidth={120} initHeight={225} />
+                    <ResponsiveImage style={{ resizeMode: 'stretch' }} borderRadius={3} source={ imgPointer[result.image] } initWidth={120} initHeight={(Platform.OS === 'android') ? 200 : 220} />
                 </View>
                 <View style={styles.subContainer}>
                     <Text style={styles.title}>{result.title}</Text>

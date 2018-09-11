@@ -58,7 +58,7 @@ export default class Pontos extends Component {
                 <Carousel
                 data={points}
                 layout={'default'}
-                loop={true}
+                loop={false}
                 renderItem={this._renderItem}
                 sliderWidth={metrics.screenWidth}
                 itemWidth={metrics.screenWidth - 90}

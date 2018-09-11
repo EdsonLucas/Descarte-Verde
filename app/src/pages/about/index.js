@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Platform, StatusBar } from 'react-native';
 import ResponsiveImage from 'react-native-responsive-image';
-import { MaterialCommunityIcons } from 'icons';
+import { Entypo } from 'icons';
 import styles from './styles';
 import { colors } from 'styles';
 
@@ -32,6 +32,12 @@ const Sobre = () => (
               </View>
           </View>
 
+         <View style={styles.cardContainer}>
+              <Text style={[styles.description, styles.textContainer]}>
+                  O grupo Green Idea colaborou com o grupo Arquitetiquímicos em sua coleta de tubos de creme dental, trazendo ao Inovaweek mais integração entre os trabalhos desenvolvidos e ajudando ainda mais a natureza na coleta de uma material para o qual ainda não há descarte definitivo no Brasil.
+              </Text>
+          </View>          
+
           <View style={styles.cardContainer}>
               <Text style={[styles.description, styles.textContainer]}>
                   O Descarte Verde foi desenvolvido por alunos da UVV(Universidade de Vila Velha), com integrantes de cursos de Sistemas de Informação, Marketing, Engenharia e Psicologia.
@@ -44,7 +50,7 @@ const Sobre = () => (
 Sobre.navigationOptions = {
     header: null,
     swipeEnabled: false,
-    tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="menu" size={(Platform.OS === 'ios') ? 22 : 24} color={tintColor} />
+    tabBarIcon: ({ tintColor }) => <Entypo name="info-with-circle" size={(Platform.OS === 'ios') ? 20 : 22} color={tintColor} />
 }
 
 export default Sobre;

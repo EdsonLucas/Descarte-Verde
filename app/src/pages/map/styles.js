@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginTop: 0,
     paddingTop: (Platform.OS === 'ios') ? 24 : 0,
-    marginBottom: metrics.screenHeight - 150,
+    marginBottom: (Platform.OS === 'ios')? metrics.screenHeight - 85 : metrics.screenHeight - 100,
   },
 
   topoTitle: {
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     paddingBottom: metrics.basePadding / 2,
     borderBottomWidth: 1,
-    borderBottomColor: '#EEEEEE'
+    borderBottomColor: '#EEEEEE',
   },
 
   descriptionContainer: {
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     margin: metrics.baseMargin / 5,
     paddingVertical: metrics.basePadding / 7,
     paddingHorizontal: metrics.basePadding / 4,
-    borderRadius: metrics.baseRadius * 3,
+    borderRadius: (Platform.OS === 'android') ? metrics.baseRadius * 3 : metrics.baseRadius * 2.5,
   },
 
   description: {
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
 
   distanceContainer: {
-    flex: (Platform.OS === 'android') ? 1 : 0,
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   },
 
   distanceIcon: {
-    width: 29,
+    width: (Platform.OS === 'ios')? 28 : 29,
     backgroundColor: colors.main2,
     paddingVertical: 2,
     paddingHorizontal: 9,
