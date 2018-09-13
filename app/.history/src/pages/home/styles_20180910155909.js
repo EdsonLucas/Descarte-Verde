@@ -1,4 +1,4 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { general, colors, metrics} from 'styles';
 
 const styles = StyleSheet.create({
@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     imageContainer: {
         flex: 0.3,
         alignItems: 'center',
-        paddingTop: (Platform.OS === 'android') ? metrics.screenHeight / 10 : metrics.screenHeight / 5,
+        paddingTop: metrics.baseMargin * 4,
+        //marginBottom: metrics.baseMargin,
         paddingHorizontal: metrics.basePadding,
         backgroundColor: colors.main2,
     },
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
         ...general.text,
         textAlign: 'center',
         fontSize: 16,
+        //color: colors.white,
         paddingLeft: metrics.basePadding / 2,
     },
 
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
         flex: 0.7,
         paddingHorizontal: metrics.basePadding,
         paddingVertical: metrics.basePadding / 2,
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         backgroundColor: colors.white,
     },
 
@@ -42,30 +44,26 @@ const styles = StyleSheet.create({
     },
 
     centerForm: {
-        marginTop: 2,
+        flex: 1,
+        marginTop: metrics.baseMargin,
     },
 
     imageBackground2: {
-        flexGrow: 2,
-        flexShrink: 1,
-        margin: metrics.baseMargin / 3,
-        minHeight: metrics.screenHeight - metrics.screenHeight * 0.72,
+        flex: 1,
+        margin: metrics.baseMargin / 3,        
+        height: 105,
     },
 
     imageBackground: {
         flex: 1,
-        flexShrink: 1,
-        flexGrow: 2,
         width: metrics.screenWidth,
         margin: metrics.baseMargin / 3,
-        minHeight: metrics.screenHeight - metrics.screenHeight * 0.72,
+        height: 105,
     },
 
     button: {
         flex: 1,
-        flexShrink: 1,
-        flexGrow: 2,
-        minHeight: metrics.screenHeight - metrics.screenHeight * 0.72,
+        height: 105,
         justifyContent: 'center',
         alignItems: 'center',
     },

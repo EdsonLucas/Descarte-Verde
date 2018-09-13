@@ -40,20 +40,20 @@ class Sobre extends Component {
                 <View style={styles.textContainer}>
                     <Text style={styles.title}>O Descarte Verde</Text>
                     <Text style={styles.description}>
-                        O Descarte Verde é um serviço oferecido pelo Grupo Green Idea. O Descarte verde te auxilia na busca pelos pontos de reciclagem mais próximos a você! O Descarte Verde é uma forma inteligente de lidar com o descarte de resíduos, auxiliando você a encontrar os pontos de coleta para reciclagem ou destinação final ambientalmente correta.
+                    O Descarte Verde é um serviço oferecido pelo Grupo Green Idea. Ele te auxilia na busca pelos pontos de reciclagem mais próximos a você! É uma forma inteligente de lidar com o descarte de resíduos, auxiliando você a encontrar os pontos de coleta para reciclagem ou destinação final ambientalmente correta.
                     </Text>
                 </View>
             </View>
 
           <View style={styles.cardContainer}>
                 <Text style={[styles.description, styles.textContainer]}>
-                    O grupo Green Idea colaborou com o grupo Arquitetiquímicos em sua coleta de tubos de creme dental, trazendo ao Inovaweek mais integração entre os trabalhos desenvolvidos e ajudando ainda mais a natureza na coleta de uma material para o qual ainda não há descarte definitivo no Brasil.
+                O grupo Green Idea colaborou com o grupo Arquitetiquímicos em sua coleta de tubos de creme dental, trazendo ao Inovaweek mais integração entre os trabalhos desenvolvidos e ajudando ainda mais a natureza na coleta de uma material para o qual ainda não há descarte definitivo no Brasil.
                 </Text>
             </View>
 
             <View style={styles.cardContainer}>
                 <Text style={[styles.description, styles.textContainer]}>
-                    O Descarte Verde foi desenvolvido por alunos da UVV(Universidade de Vila Velha), com integrantes de cursos de Sistemas de Informação, Marketing, Engenharia e Psicologia.
+                O Descarte Verde foi desenvolvido por alunos da UVV(Universidade de Vila Velha), com integrantes de cursos de Sistemas de Informação, Marketing, Engenharia e Psicologia.
                 </Text>
             </View>
           </View>

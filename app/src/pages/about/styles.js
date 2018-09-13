@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     description: {
         ...general.text,
         color: colors.white,
+        textAlign: 'justify',
     },
 
 });

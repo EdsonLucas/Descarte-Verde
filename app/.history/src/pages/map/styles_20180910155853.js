@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     marginTop: 0,
     paddingTop: (Platform.OS === 'ios') ? 24 : 0,
-    marginBottom: metrics.screenHeight - metrics.screenHeight * 0.15,
+    marginBottom: (Platform.OS === 'ios')? metrics.screenHeight - 85 : metrics.screenHeight - 100,
   },
 
   topoTitle: {
@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
   cardContainer: {
     flexDirection: 'row',
     width: metrics.screenWidth - 110,
-    backgroundColor: colors.white,
+    backgroundColor: '#FFF',
     borderRadius: metrics.baseRadius,
-    marginVertical: metrics.screenHeight / 20,
+    marginVertical: metrics.baseMargin * 5,
     padding: 0,
     shadowOffset: {
       width: 5,
