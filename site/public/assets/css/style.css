@@ -577,6 +577,7 @@ ul, ol {
   .main-logo {
     max-width: 100%;
     border-right: none;
+    margin-top: 50px;
   }
   /* margin-top */
   .m-sm-top-0 {
@@ -1621,7 +1622,7 @@ ul, ol {
     width: 60px;
     height: 60px;
     padding-top: 4px;
-    padding-left: 14px;
+    padding-left: 3px;
     font-size: 25px;
     border: none;
     cursor: pointer;

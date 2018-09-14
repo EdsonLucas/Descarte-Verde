@@ -14,7 +14,7 @@ export default class politicaDePrivacidade extends Component {
             <h1>Política de privacidade</h1>
             <p>Quando você usa nossos serviços, você confia em nós para baixar o aplicativo, bem como para usar os dados.</p>
             <p>Os diferentes recursos incluídos em nossos aplicativos podem exigir o seguinte acesso:</p>
-              <ul>
+              <ul style={{'list-style': 'initial', 'padding-left': '30px'}}>
                 <li>Sua posição GPS: esta posição é necessária nos aplicativos locais do modo de Realidade Aumentada. 3D é então geolocalizado para escala 1.</li>
                 <li>Valores do sensor: alguns recursos, como a visualização 360, exigem que você recupere os valores de alguns sensores no seu dispositivo (bússola, giroscópio, acelerômetro). Esses valores são processados ​​em tempo real e não são armazenados.</li>
               </ul>

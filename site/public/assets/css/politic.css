@@ -324,8 +324,7 @@ a {
 }
 
 ul {
-  list-style: initial;
-  padding-left: 30px;
+  list-style: none;
 }
 
 img {
